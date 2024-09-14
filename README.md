@@ -52,9 +52,6 @@ Surview is a web application that allows users to create and manage surveys. It 
 - **Create Surview**: After logging in, navigate to the "Create Surview" page to create a new survey.
 - **Dashboard**: View your created surveys on the dashboard.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request for any changes or improvements.
 
 ## License
 
