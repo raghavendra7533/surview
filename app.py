@@ -90,7 +90,13 @@ def login():
 @app.route('/homepage')
 @login_required
 def homepage():
-    return render_template('homepage.html', username=session['user'])
+    user_surviews = []
+    with open('surviews.json', 'r') as f:
+        surviews = json.load(f)
+    for surview in surviews:
+        if surview['creator'] == session['user']:
+            user_surviews.append(surview)
+    return render_template('homepage.html', username=session['user'], surviews=surviews, user_surviews=user_surviews)
 
 @app.route('/logout')
 def logout():
