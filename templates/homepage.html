@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Surview.io</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="sidebar-content">
+                    <div class="logo">
+                        <img src="{{ url_for('static', filename='images/surview_logo.png') }}" alt="Surview.io">
+                        <span>Surview.io</span>
+                    </div>
+                    <a href="#" class="nav-link active">
+                        <i class="bi bi-grid"></i> Dashboard
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-bar-chart"></i> Create Surview
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-folder"></i> Workspace
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-gear"></i> Settings
+                    </a>
+                    <div class="upgrade-card">
+                        <img src="{{ url_for('static', filename='images/upgrade_icon.png') }}" alt="Upgrade" style="width: 50px; margin-bottom: 10px;">
+                        <button class="btn-upgrade">Upgrade Now</button>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <img src="{{ url_for('static', filename='images/{{ username }}.jpg') }}" alt="User Avatar">
+                    <div class="user-details">
+                        <span class="user-name">{{ username }}</span>
+                        <span class="user-status">Free Account</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Home
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary ms-2">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats cards -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="bi bi-heart stats-icon text-primary"></i>
+                            <span class="fs-5 fw-bold">17+</span>
+                            <p class="mb-0">Surviews created</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="bi bi-hourglass stats-icon text-warning"></i>
+                            <span class="fs-5 fw-bold">2000+</span>
+                            <p class="mb-0">Responses received</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="bi bi-clock stats-icon text-danger"></i>
+                            <span class="fs-5 fw-bold">200+</span>
+                            <p class="mb-0">Hours saved</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="bi bi-currency-dollar stats-icon text-success"></i>
+                            <span class="fs-5 fw-bold">2 Lakh+</span>
+                            <p class="mb-0">Rupees saved</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Survey list -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <!-- Survey card -->
+                        <div class="survey-card">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="fw-bold">#876364</span>
+                                <span class="status-badge status-complete">Complete</span>
+                            </div>
+                            <h5>Customer Satisfaction of Unlearn</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">12 Dec, 2020</span>
+                                <span>100 respondents</span>
+                            </div>
+                        </div>
+                        <!-- Add more survey cards here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

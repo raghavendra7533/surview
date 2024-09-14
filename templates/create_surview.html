@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+</head>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar (You can include this in your layout.html) -->
+        <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="sidebar-content">
+                    <div class="logo">
+                        <img src="{{ url_for('static', filename='images/surview_logo.png') }}" alt="Surview.io">
+                        <span>Surview.io</span>
+                    </div>
+                    <a href="#" class="nav-link active">
+                        <i class="bi bi-grid"></i> Dashboard
+                    </a>
+                    <a href="{{ url_for('create_surview') }}" class="nav-link">
+                        <i class="bi bi-bar-chart"></i> Create Surview
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-folder"></i> Workspace
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-gear"></i> Settings
+                    </a>
+                    <div class="upgrade-card">
+                        <img src="{{ url_for('static', filename='images/upgrade_icon.png') }}" alt="Upgrade" style="width: 50px; margin-bottom: 10px;">
+                        <button class="btn-upgrade">Upgrade Now</button>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <img src="{{ url_for('static', filename='images/{{ username }}.jpg') }}" alt="User Avatar">
+                    <div class="user-details">
+                        <span class="user-name">{{ username }}</span>
+                        <span class="user-status">Free Account</span>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Create Surview</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Home</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary ms-2">Contact Us</button>
+                </div>
+            </div>
+
+            <form id="create-surview-form" action="{{ url_for('create_surview') }}" method="POST">
+                <div class="mb-3">
+                    <label for="surview-title" class="form-label">Surview Title</label>
+                    <input type="text" class="form-control" id="surview-title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="surview-description" class="form-label">Description</label>
+                    <textarea class="form-control" id="surview-description" name="description" rows="3"></textarea>
+                </div>
+                <div id="questions-container">
+                    <div class="question-block mb-3">
+                        <label class="form-label">Question 1</label>
+                        <input type="text" class="form-control mb-2" name="questions[]" required>
+                        <select class="form-select" name="question_types[]">
+                            <option value="multiple_choice">Multiple Choice</option>
+                            <option value="text">Text</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" id="add-question" class="btn btn-secondary mb-3">Add Question</button>
+                <button type="submit" class="btn btn-primary">Create Surview</button>
+            </form>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.getElementById('add-question').addEventListener('click', function() {
+        const container = document.getElementById('questions-container');
+        const questionCount = container.children.length + 1;
+        const newQuestion = document.createElement('div');
+        newQuestion.className = 'question-block mb-3';
+        newQuestion.innerHTML = `
+            <label class="form-label">Question ${questionCount}</label>
+            <input type="text" class="form-control mb-2" name="questions[]" required>
+            <select class="form-select" name="question_types[]">
+                <option value="multiple_choice">Multiple Choice</option>
+                <option value="text">Text</option>
+                <option value="rating">Rating</option>
+            </select>
+        `;
+        container.appendChild(newQuestion);
+    });
+</script>
+{% endblock %}

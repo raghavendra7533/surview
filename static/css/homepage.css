@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.sidebar {
+    height: 100vh;
+    background-color: #ffffff;
+    padding-top: 20px;
+    display: flex !important;
+    flex-direction: column;
+}
+.sidebar-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .nav-link {
+    color: #6c757d;
+    padding: 10px 20px;
+}
+.sidebar .nav-link.active {
+    color: #6610f2;
+    background-color: #f0e7fe;
+}
+.main-content {
+    padding: 20px;
+}
+.stats-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.stats-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+.survey-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+.status-complete {
+    background-color: #e7f5e8;
+    color: #28a745;
+}
+.status-progress {
+    background-color: #fff3cd;
+    color: #ffc107;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.upgrade-card {
+    background-color: #f0e7fe;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+.user-info {
+    padding: 10px 20px;
+    border-top: 1px solid #e9ecef;
+}
+.sidebar {
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex !important;
+    flex-direction: column;
+    border-right: 1px solid #e0e0e0;
+}
+.sidebar-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: #6610f2;
+}
+.nav-link i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+.upgrade-card {
+    background-color: #f0f0ff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+.upgrade-card h5 {
+    margin-bottom: 10px;
+}
+.upgrade-card .btn-upgrade {
+    background-color: #6610f2;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+}
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-info .user-details {
+    display: flex;
+    flex-direction: column;
+}
+.user-info .user-name {
+    font-weight: bold;
+    color: #333;
+}
+.user-info .user-status {
+    font-size: 12px;
+    color: #666;
+}
+.question-block {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
