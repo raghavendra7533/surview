@@ -51,8 +51,3 @@ Surview is a web application that allows users to create and manage surveys. It 
 - **Log In**: Use your credentials to log in to your account.
 - **Create Surview**: After logging in, navigate to the "Create Surview" page to create a new survey.
 - **Dashboard**: View your created surveys on the dashboard.
-
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
