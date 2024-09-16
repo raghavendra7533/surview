@@ -1,0 +1,65 @@
+.sidebar {
+    height: 100vh;
+    background-color: #ffffff;
+    transition: all 0.3s;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar .nav-link span {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .nav-link span {
+    opacity: 0;
+    display: none;
+}
+
+.sidebar .logo img {
+    width: 40px;
+    transition: all 0.3s;
+}
+
+.sidebar.collapsed .logo img {
+    width: 30px;
+}
+
+.user-info {
+    transition: all 0.3s;
+}
+
+.sidebar.collapsed .user-info {
+    display: none;
+}
+
+.main-content {
+    transition: all 0.3s;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 60px;
+}
+
+/* Styles for the new survey setup form */
+#survey-setup .form-control,
+#survey-setup .form-select {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+#question-count {
+    max-width: 80px;
+}
+
+.question-block {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}

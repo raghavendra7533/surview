@@ -13,32 +13,38 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+            <nav id="sidebar" class="sidebar">
                 <div class="sidebar-content">
                     <div class="logo">
                         <img src="{{ url_for('static', filename='images/surview_logo.svg') }}" alt="Surview.io">
                     </div>
-                    <a href="/homepage" class="nav-link active">
-                        <i class="bi bi-grid"></i> Dashboard
-                    </a>
-                    <a href="/create_surview" class="nav-link">
-                        <i class="bi bi-bar-chart"></i> Create Surview
-                    </a>
-                    <a href="#" class="nav-link">
-                        <i class="bi bi-folder"></i> Workspace
-                    </a>
-                    <a href="#" class="nav-link">
-                        <i class="bi bi-gear"></i> Settings
-                    </a>
-                    <div class="upgrade-card">
-                        <img src="{{ url_for('static', filename='images/upgrade_icon.png') }}" alt="Upgrade" style="width: 50px; margin-bottom: 10px;">
-                        <button class="btn-upgrade">Upgrade Now</button>
-                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="{{ url_for('homepage') }}" class="nav-link {% if request.endpoint == 'homepage' %}active{% endif %}">
+                                <i class="bi bi-grid"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url_for('create_surview') }}" class="nav-link {% if request.endpoint == 'create_surview' %}active{% endif %}">
+                                <i class="bi bi-plus-square"></i> <span>Create Surview</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-folder"></i> <span>Workspace</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-gear"></i> <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="user-info">
-                    <img src="{{ url_for('static', filename='images/{{ username }}.jpg') }}" alt="User Avatar">
+                    <img src="{{ url_for('static', filename='images/default_avatar.jpg') }}" alt="User Avatar">
                     <div class="user-details">
-                        <span class="user-name">{{ username }}</span>
+                        <span class="user-name">{{ session.get('user', 'Guest') }}</span>
                         <span class="user-status">Free Account</span>
                     </div>
                 </div>
@@ -63,7 +69,7 @@
                     <div class="col-md-3">
                         <div class="stats-card">
                             <i class="bi bi-heart stats-icon text-primary"></i>
-                            <span class="fs-5 fw-bold">17+</span>
+                            <span class="fs-5 fw-bold">{{user_surviews|length}}</span>
                             <p class="mb-0">Surviews created</p>
                         </div>
                     </div>
@@ -93,21 +99,29 @@
                 <!-- Survey list -->
                 <div class="row mt-4">
                     <div class="col-12">
-                        <!-- Survey card -->
                         {% for surview in user_surviews %}
-                        <div class="survey-card">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="fw-bold">#876364</span>
-                                <span class="status-badge status-complete">Complete</span>
+                        <a href="{{ url_for('view_surview', surview_id=surview['id']) }}" class="text-decoration-none">
+                            <div class="survey-card">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold">#{{surview['id']}}</span>
+                                    {% if surview['status'] == 'in_progress' %}
+                                        <span class="status-badge status-progress">In Progress</span>
+                                    {% elif surview['status'] == 'complete' %}
+                                        <span class="status-badge status-complete">Complete</span>
+                                    {% endif %}
+                                </div>
+                                <h5>{{surview['title']}}</h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted">{{ surview['created_at'] }}</span>
+                                    {% if 'respondents' in surview and surview['respondents'] > 0 %}
+                                        <span>{{ surview['respondents'] }} respondents</span>
+                                    {% else %}
+                                        <span>0 respondents</span>
+                                    {% endif %}
+                                </div>
                             </div>
-                            <h5>Customer Satisfaction of Unlearn</h5>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted">12 Dec, 2020</span>
-                                <span>100 respondents</span>
-                            </div>
-                        </div>
+                        </a>
                         {% endfor %}
-                        <!-- Add more survey cards here -->
                     </div>
                 </div>
             </main>

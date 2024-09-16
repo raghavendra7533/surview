@@ -7,36 +7,43 @@
 </head>
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-content">
                 <div class="logo">
                     <img src="{{ url_for('static', filename='images/surview_logo.svg') }}" alt="Surview.io">
                 </div>
-                <a href="/homepage" class="nav-link">
-                    <i class="bi bi-grid"></i> Dashboard
-                </a>
-                <a href="/create_surview" class="nav-link active">
-                    <i class="bi bi-bar-chart"></i> Create Surview
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-folder"></i> Workspace
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-gear"></i> Settings
-                </a>
-                <div class="upgrade-card">
-                    <img src="{{ url_for('static', filename='images/upgrade_icon.png') }}" alt="Upgrade" style="width: 50px; margin-bottom: 10px;">
-                    <button class="btn-upgrade">Upgrade Now</button>
-                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="{{ url_for('homepage') }}" class="nav-link {% if request.endpoint == 'homepage' %}active{% endif %}">
+                            <i class="bi bi-grid"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('create_surview') }}" class="nav-link {% if request.endpoint == 'create_surview' %}active{% endif %}">
+                            <i class="bi bi-plus-square"></i> <span>Create Surview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-folder"></i> <span>Workspace</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-gear"></i> <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="user-info">
-                <img src="{{ url_for('static', filename='images/{{ username }}.jpg') }}" alt="User Avatar">
+                <img src="{{ url_for('static', filename='images/default_avatar.jpg') }}" alt="User Avatar">
                 <div class="user-details">
-                    <span class="user-name">{{ username }}</span>
+                    <span class="user-name">{{ session.get('user', 'Guest') }}</span>
                     <span class="user-status">Free Account</span>
                 </div>
             </div>
         </nav>
+
         <!-- Main content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -47,28 +54,41 @@
                 </div>
             </div>
 
-            <form id="create-surview-form" action="{{ url_for('create_surview') }}" method="POST">
+            <form method="POST" action="{{ url_for('create_surview') }}">
                 <div class="mb-3">
-                    <label for="surview-title" class="form-label">Surview Title</label>
-                    <input type="text" class="form-control" id="surview-title" name="title" required>
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
                 </div>
                 <div class="mb-3">
-                    <label for="surview-description" class="form-label">Description</label>
-                    <textarea class="form-control" id="surview-description" name="description" rows="3"></textarea>
+                    <label for="insights" class="form-label">What insights do you expect from this surview?</label>
+                    <textarea class="form-control" id="insights" name="insights" rows="3" required></textarea>
                 </div>
-                <div id="questions-container">
-                    <div class="question-block mb-3">
-                        <label class="form-label">Question 1</label>
-                        <input type="text" class="form-control mb-2" name="questions[]" required>
-                        <select class="form-select" name="question_types[]">
-                            <option value="multiple_choice">Multiple Choice</option>
-                            <option value="text">Text</option>
-                            <option value="rating">Rating</option>
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <label for="question_count" class="form-label">How many questions do you expect?</label>
+                    <input type="number" class="form-control" id="question_count" name="question_count" value="5" min="1" max="20" required>
                 </div>
-                <button type="button" id="add-question" class="btn btn-secondary mb-3">Add Question</button>
-                <button type="submit" class="btn btn-primary mb-3">Create Surview</button>
+                <div class="mb-3">
+                    <label for="follow_up_questions" class="form-label">Select the maximum number of automated follow-up questions</label>
+                    <select class="form-select" id="follow_up_questions" name="follow_up_questions" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="interview_tone" class="form-label">Tone of the Interview</label>
+                    <select class="form-select" id="interview_tone" name="interview_tone" required>
+                        <option value="formal">Formal</option>
+                        <option value="casual">Casual</option>
+                        <option value="friendly">Friendly</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="problem_description" class="form-label">Description of Problem?</label>
+                    <textarea class="form-control" id="problem_description" name="problem_description" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Generate</button>
             </form>
         </main>
     </div>

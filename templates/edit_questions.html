@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='images/surview_logo.svg') }}" alt="Surview.io">
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="{{ url_for('homepage') }}" class="nav-link {% if request.endpoint == 'homepage' %}active{% endif %}">
+                            <i class="bi bi-grid"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('create_surview') }}" class="nav-link {% if request.endpoint == 'create_surview' %}active{% endif %}">
+                            <i class="bi bi-plus-square"></i> <span>Create Surview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-folder"></i> <span>Workspace</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-gear"></i> <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-info">
+                <img src="{{ url_for('static', filename='images/default_avatar.jpg') }}" alt="User Avatar">
+                <div class="user-details">
+                    <span class="user-name">{{ session.get('user', 'Guest') }}</span>
+                    <span class="user-status">Free Account</span>
+                </div>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <h1>Edit Survey Questions</h1>
+            <form method="POST">
+                {% for question in questions %}
+                <div class="mb-3">
+                    <label for="question{{ loop.index }}" class="form-label">Question {{ loop.index }}</label>
+                    <input type="text" class="form-control" id="question{{ loop.index }}" name="questions[]" value="{{ question }}" required>
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Save Questions</button>
+            </form>
+        </main>
+    </div>
+</div>
+{% endblock %}

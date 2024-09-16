@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, abort
 import json
 from datetime import datetime
 from functools import wraps
+from openai import OpenAI
+import uuid
+from helper import generate_questions
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for sessions and flashing messages
+OPENAI_API_KEY = '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'
+client = OpenAI()
 
 # User authentication decorator
 def login_required(f):
@@ -29,9 +34,11 @@ def signup():
             'username': request.form['username'],
             'password': request.form['password'],  # Note: In a real application, never store passwords in plain text
             'terms_agreed': request.form.get('terms_agreed') == 'on',
+            'user_profile_picture': 'default_avatar.jpg',
             'signup_date': datetime.now().isoformat()
         }
 
+        
         # Read existing data
         try:
             with open('users.json', 'r') as f:
@@ -105,42 +112,83 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/create_surview', methods=['GET', 'POST'])
-@login_required
 def create_surview():
     if request.method == 'POST':
-        new_surview = {
+        survey_data = {
+            'id': str(uuid.uuid4().int)[:6],
             'title': request.form['title'],
-            'description': request.form['description'],
-            'creator': session['user'],
-            'created_at': datetime.now().isoformat(),
-            'questions': []
+            'description': request.form['problem_description'],
+            'creator': session.get('user', 'anonymous'),
+            'created_at': datetime.now().strftime("%d %b %Y"),
+            'insights': request.form['insights'],
+            'status': 'in_progress',
+            'question_count': int(request.form['question_count']),
+            'follow_up_questions': int(request.form['follow_up_questions']),
+            'interview_tone': request.form['interview_tone'],
+            'problem_description': request.form['problem_description']
         }
         
-        questions = request.form.getlist('questions[]')
-        question_types = request.form.getlist('question_types[]')
+        # Generate questions using OpenAI
+        prompt = generate_questions(survey_data)
+
+        response = client.completions.create(
+            model="gpt-3.5-turbo-instruct",
+            prompt=prompt,
+            max_tokens=500,
+            n=1,
+            stop=None,
+            temperature=0.7,
+        )
+
+        questions = response.choices[0].text.strip().split('\n')
         
-        for q, q_type in zip(questions, question_types):
-            new_surview['questions'].append({
-                'question': q,
-                'type': q_type
-            })
+        # Format questions for JSON
+        survey_data['questions'] = [{"question": q} for q in questions]
         
-        # Load existing surviews
+        # Read existing data
         try:
             with open('surviews.json', 'r') as f:
                 surviews = json.load(f)
         except FileNotFoundError:
             surviews = []
         
-        # Add new surview and save
-        surviews.append(new_surview)
+        # Append new survey data
+        surviews.append(survey_data)
+        
+        # Write updated data
         with open('surviews.json', 'w') as f:
             json.dump(surviews, f, indent=2)
         
-        flash('Surview created successfully!', 'success')
-        return redirect(url_for('homepage'))
+        # Store the generated questions in the session for editing
+        session['generated_questions'] = questions
+        
+        return redirect(url_for('edit_questions'))
     
     return render_template('create_surview.html')
+
+@app.route('/edit_questions', methods=['GET', 'POST'])
+def edit_questions():
+    questions = session.get('generated_questions', [])
+    if request.method == 'POST':
+        print(questions)
+        return redirect(url_for('homepage'))
+    
+    return render_template('edit_questions.html', questions=questions)
+
+@app.route('/surview/<surview_id>')
+def view_surview(surview_id):
+    # Load surviews from JSON file
+    with open('surviews.json', 'r') as f:
+        surviews = json.load(f)
+    
+    # Find the specific surview
+    surview = next((s for s in surviews if s['id'] == surview_id), None)
+    
+    if surview is None:
+        abort(404)  # Surview not found
+    
+    return render_template('view_surview.html', surview=surview)
+
 
 
 if __name__ == '__main__':
