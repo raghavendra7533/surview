@@ -4,12 +4,15 @@ from datetime import datetime
 from functools import wraps
 from openai import OpenAI
 import uuid
-from helper import generate_questions
+from helper import generate_questions, create_call, create_agent
+import logging
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for sessions and flashing messages
-OPENAI_API_KEY = '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'
-client = OpenAI()
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # User authentication decorator
 def login_required(f):
@@ -125,7 +128,7 @@ def create_surview():
             'question_count': int(request.form['question_count']),
             'follow_up_questions': int(request.form['follow_up_questions']),
             'interview_tone': request.form['interview_tone'],
-            'problem_description': request.form['problem_description']
+            'problem_description': request.form['problem_description'],
         }
         
         # Generate questions using OpenAI
@@ -141,6 +144,7 @@ def create_surview():
         )
 
         questions = response.choices[0].text.strip().split('\n')
+        logging.debug(f"Generated {len(questions)} questions")
         
         # Format questions for JSON
         survey_data['questions'] = [{"question": q} for q in questions]
@@ -161,18 +165,75 @@ def create_surview():
         
         # Store the generated questions in the session for editing
         session['generated_questions'] = questions
+        logging.debug(f"Stored {len(questions)} questions in session")
         
         return redirect(url_for('edit_questions'))
     
     return render_template('create_surview.html')
 
+logging.basicConfig(level=logging.DEBUG)
+
+import json
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
 @app.route('/edit_questions', methods=['GET', 'POST'])
 def edit_questions():
-    questions = session.get('generated_questions', [])
     if request.method == 'POST':
-        print(questions)
+        updated_questions = request.form.getlist('questions[]')
+        logging.debug(f"Received {len(updated_questions)} questions: {updated_questions}")
+
+        try:
+            # Read the existing surviews from the JSON file
+            with open('surviews.json', 'r') as f:
+                surviews = json.load(f)
+            logging.debug(f"Loaded {len(surviews)} surveys from JSON")
+
+            # Find the survey we're editing (assuming it's the last one added)
+            if surviews:
+                current_survey = surviews[-1]
+                current_survey['questions'] = [{"question": q} for q in updated_questions]
+                logging.debug(f"Updated survey with {len(current_survey['questions'])} questions")
+                current_survey_id = current_survey['id']
+                current_survey_title = current_survey['title']
+                current_survey_username = current_survey['creator']
+                print(current_survey_title)
+
+                # Write the updated data back to the JSON file
+                with open('surviews.json', 'w') as f:
+                    json.dump(surviews, f, indent=2)
+                logging.debug("Wrote updated surveys to JSON")
+
+                # Call the create_agent function
+                create_call(current_survey_title, current_survey_username, current_survey_id)
+                logging.debug("Created agent")
+                logging.debug(current_survey_title)
+
+                flash('Questions updated successfully!', 'success')
+            else:
+                flash('No surveys found to update.', 'error')
+                logging.error("No surveys found in the JSON file")
+
+        except Exception as e:
+            logging.error(f"An error occurred: {str(e)}", exc_info=True)
+            flash(f'An error occurred while updating questions: {str(e)}', 'error')
+
         return redirect(url_for('homepage'))
     
+    # For GET requests, display the questions for editing
+    try:
+        with open('surviews.json', 'r') as f:
+            surviews = json.load(f)
+        if surviews:
+            questions = [q['question'] for q in surviews[-1]['questions']]
+        else:
+            questions = []
+    except Exception as e:
+        logging.error(f"Error loading questions: {str(e)}", exc_info=True)
+        questions = []
+
+    logging.debug(f"Rendering edit_questions.html with {len(questions)} questions")
     return render_template('edit_questions.html', questions=questions)
 
 @app.route('/surview/<surview_id>')
@@ -189,6 +250,41 @@ def view_surview(surview_id):
     
     return render_template('view_surview.html', surview=surview)
 
+from flask import jsonify
+
+@app.route('/regenerate_questions', methods=['POST'])
+def regenerate_questions():
+    # Retrieve the survey details from the session or database
+    survey_data = session.get('current_survey', {})
+
+    # Generate new questions using OpenAI (similar to your create_surview function)
+    prompt = f"Generate {survey_data.get('question_count', 5)} survey questions based on the following information:\n\n"
+    prompt += f"Title: {survey_data.get('title', '')}\n"
+    prompt += f"Expected Insights: {survey_data.get('insights', '')}\n"
+    prompt += f"Problem Description: {survey_data.get('problem_description', '')}\n"
+    prompt += f"Interview Tone: {survey_data.get('interview_tone', '')}\n"
+    prompt += f"Maximum Follow-up Questions: {survey_data.get('follow_up_questions', 0)}\n\n"
+    prompt += "Provide only the questions, separated by newlines."
+
+    try:
+        response = client.completions.create(
+            model="gpt-3.5-turbo-instruct",
+            prompt=prompt,
+            max_tokens=500,
+            n=1,
+            stop=None,
+            temperature=0.7,
+        )
+
+        new_questions = response.choices[0].text.strip().split('\n')
+        
+        # Update the session with new questions
+        session['generated_questions'] = new_questions
+
+        return jsonify({'success': True, 'questions': new_questions})
+    except Exception as e:
+        print(f"Error generating questions: {str(e)}")
+        return jsonify({'success': False, 'error': 'Failed to generate questions'}), 500
 
 
 if __name__ == '__main__':
