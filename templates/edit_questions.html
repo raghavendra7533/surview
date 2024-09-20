@@ -46,7 +46,15 @@
                 {% for question in questions %}
                 <div class="mb-3">
                     <label for="question{{ loop.index }}" class="form-label">Question {{ loop.index }}</label>
-                    <input type="text" class="form-control" id="question{{ loop.index }}" name="questions[]" value="{{ question }}" required>
+                    <input type="text" class="form-control" id="question{{ loop.index }}" name="questions[]" value="{{ question['main_question'] }}" required>
+                    <label for="if_user_gives_generic_answer" class="form-label">If user gives generic answer</label>
+                    <input type="text" class="form-control" id="if_user_gives_generic_answer_{{ loop.index }}" value="{{ question['if user gives generic answer'] }}">
+                    <label for="probe_if_needed" class="form-label">probe_if_needed</label>
+                    <input type="text" class="form-control" id="probe_if_needed_{{ loop.index }}" value="{{ question['probe if needed'] }}">
+                    <label for="probe_if_vague" class="form-label">probe_if_vague</label>
+                    <input type="text" class="form-control" id="probe_if_vague_{{ loop.index }}" value="{{ question['probe if vague'] }}">
+                    <label for="probe_gently_if_broad_answer" class="form-label">probe_gently_if_broad_answer</label>
+                    <input type="text" class="form-control" id="probe_gently_if_broad_answer_{{ loop.index }}" value="{{ question['probe gently if broad answer'] }}">
                 </div>
                 {% endfor %}
                 <button type="submit" class="btn btn-primary">Save Questions</button>
