@@ -5,11 +5,11 @@ from functools import wraps
 from openai import OpenAI
 import uuid
 import re
-from helper import generate_questions, create_call, extract_complete_questions
+from helper import generate_questions, create_call, extract_complete_questions, get_calls
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for sessions and flashing messages
-OPENAI_API_KEY = ''
+OPENAI_API_KEY '
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # User authentication decorator
@@ -200,17 +200,21 @@ def edit_questions():
 
 @app.route('/surview/<surview_id>')
 def view_surview(surview_id):
-    # Load surviews from JSON file
     with open('surviews.json', 'r') as f:
         surviews = json.load(f)
-
     # Find the specific surview
     surview = next((s for s in surviews if s['id'] == surview_id), None)
     
+    get_calls(surview_id ,surview['agent_id'])
     if surview is None:
         abort(404) 
     print(surview)
     return render_template('view_surview.html', surview=surview)
+
+@app.route('/surview/<surview_id>/<call_id>')
+def view_call(surview_id, call_id):
+    # TODO: Implement the logic to fetch and display call details
+    return f"Viewing details for call {call_id} of surview {surview_id}"
 
 
 

@@ -339,3 +339,52 @@ def add_agent_id(agent_id, surview_id):
         logging.error(f"An unexpected error occurred: {str(e)}")
         return False
     
+def get_calls(surview_id, agent_id):
+    url = "https://api.retellai.com/v2/list-calls"
+    payload = json.dumps({
+        "filter_criteria": {
+            "agent_id": [agent_id]
+        }
+    })
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        'cookie': '_gcl_au=1.1.785196473.1725938080; _ga=GA1.1.1209231353.1725938080; mintlify-auth-key=31086e42d780b5e829a31b14ae2eacf7; _ga_L37HY50YTW=GS1.1.1726894123.11.1.1726895088.0.0.0; _ga_JECSZ9CDG8=GS1.1.1726894124.11.1.1726895088.0.0.0; ph_phc_n5ud8EgO8mxZuINnA1kTwTKQ402k6Y7eaWLQJOBNCmk_posthog=%7B%22distinct_id%22%3A%2201920ec1-d725-70b7-bd68-af91d41b0167%22%2C%22%24sesid%22%3A%5B1726895093841%2C%22019212e9-2b45-763e-bc5c-6de87a2c1a8a%22%2C1726894123845%5D%7D; ph_phc_TXdpocbGVeZVm5VJmAsHTMrCofBQu3e0kN8HGMNGTVW_posthog=%7B%22distinct_id%22%3A%220191d9ec-a2b3-7f3f-8b23-94d64f56a85d%22%2C%22%24sesid%22%3A%5B1726897382638%2C%22019212f7-ee23-7d4b-a0f1-98bc2f7d7093%22%2C1726895091235%5D%7D',
+        'dnt': '1',
+        'origin': 'https://docs.retellai.com',
+        'priority': 'u=1, i',
+        'referer': 'https://docs.retellai.com/api-references/list-calls',
+        'sec-ch-ua': '"Not;A=Brand";v="24", "Chromium";v="128"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"macOS"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+        'Authorization': 'Bearer key_cc65d545d49d554d8f616982fb3f'
+    }
+
+    response = requests.post(url, headers=headers, data=payload)
+    
+    if response.status_code == 200:
+        calls = response.json()
+        agent_calls = []
+        for call in calls:
+            if 'call_id' in call:
+                # if 'call_analysis' in call and 'call_summary' in call['call_analysis']:
+                #     call_analysis = call['call_analysis']['call_summary']
+                #     transcript = call['transcript']
+                agent_calls.append(call['call_id'])
+        with open ('surviews.json', 'r') as f:
+            surview_data = json.load(f)
+        for surview in surview_data:
+            if surview['id'] == surview_id:
+                surview['calls'] = agent_calls
+        with open("surviews.json", "w") as f:
+            json.dump(surview_data, f, indent=2)
+    else:
+        print(f"Error: {response.status_code}, {response.text}")
+
+def get_call_details(call_id):
+    pass

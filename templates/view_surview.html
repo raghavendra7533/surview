@@ -6,7 +6,7 @@
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content">
                 <div class="logo">
-                    <img src="{{ url_for('static', filename='images/surview_logo.svg') }}" alt="Surview.io">
+                    <img src="{{ url_for('static', filename='images/surview_logo.png') }}" alt="Surview.io">
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -66,15 +66,39 @@
             <div class="questions-list">
                 {% for question in surview['questions'] %}
                 <div class="question-item mb-3">
-                    <h5>{{ question['question'] }}</h5>
+                    <h5>{{ question['main_question'] }}</h5>
+                    <ul>
+                        <li><strong>If user gives generic answer:</strong> {{ question['if user gives generic answer'] }}</li>
+                        <li><strong>Probe if needed:</strong> {{ question['probe if needed'] }}</li>
+                        <li><strong>Probe if vague:</strong> {{ question['probe if vague'] }}</li>
+                        <li><strong>Probe gently if broad answer:</strong> {{ question['probe gently if broad answer'] }}</li>
+                    </ul>
                 </div>
                 {% endfor %}
             </div>
-            <button class="btn btn-primary">
-                <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}">
+            
+            <button class="btn btn-primary mb-3">
+                <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}" class="text-white text-decoration-none">
                     Share Link
                 </a>
             </button>
+
+            <div class="calls-section mt-4">
+                <h3>Calls</h3>
+                {% if surview['calls'] %}
+                    <ul class="list-group">
+                        {% for call in surview['calls'] %}
+                            <li class="list-group-item">
+                                <a href="{{ url_for('view_call', surview_id=surview['id'], call_id=call) }}" class="text-decoration-none">
+                                    Call {{ loop.index }} - {{ call }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No calls have been made for this surview yet.</p>
+                {% endif %}
+            </div>
         </main>
     </div>
 </div>
