@@ -53,7 +53,7 @@
             <!-- Main content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
+                    <h1 class="h2">Projects</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <button type="button" class="btn btn-sm btn-outline-secondary">
                             Home
@@ -61,38 +61,6 @@
                         <button type="button" class="btn btn-sm btn-outline-secondary ms-2">
                             Contact Us
                         </button>
-                    </div>
-                </div>
-
-                <!-- Stats cards -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="stats-card">
-                            <i class="bi bi-heart stats-icon text-primary"></i>
-                            <span class="fs-5 fw-bold">{{user_surviews|length}}</span>
-                            <p class="mb-0">Surviews created</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stats-card">
-                            <i class="bi bi-hourglass stats-icon text-warning"></i>
-                            <span class="fs-5 fw-bold">2000+</span>
-                            <p class="mb-0">Responses received</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stats-card">
-                            <i class="bi bi-clock stats-icon text-danger"></i>
-                            <span class="fs-5 fw-bold">200+</span>
-                            <p class="mb-0">Hours saved</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stats-card">
-                            <i class="bi bi-currency-dollar stats-icon text-success"></i>
-                            <span class="fs-5 fw-bold">2 Lakh+</span>
-                            <p class="mb-0">Rupees saved</p>
-                        </div>
                     </div>
                 </div>
 
@@ -104,17 +72,12 @@
                             <div class="survey-card">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <span class="fw-bold">#{{surview['id']}}</span>
-                                    {% if surview['status'] == 'in_progress' %}
-                                        <span class="status-badge status-progress">In Progress</span>
-                                    {% elif surview['status'] == 'complete' %}
-                                        <span class="status-badge status-complete">Complete</span>
-                                    {% endif %}
                                 </div>
                                 <h5>{{surview['title']}}</h5>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="text-muted">{{ surview['created_at'] }}</span>
                                     {% if 'respondents' in surview and surview['respondents'] > 0 %}
-                                        <span>{{ surview['respondents'] }} respondents</span>
+                                        <span>{{ surview['call'] }} respondents</span>
                                     {% else %}
                                         <span>0 respondents</span>
                                     {% endif %}

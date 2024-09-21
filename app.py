@@ -5,11 +5,11 @@ from functools import wraps
 from openai import OpenAI
 import uuid
 import re
-from helper import generate_questions, create_call, extract_complete_questions, get_calls
+from helper import generate_questions, create_call, extract_complete_questions, get_calls, get_call_details, extract_call_details
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for sessions and flashing messages
-OPENAI_API_KEY '
+OPENAI_API_KEY = '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'
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # User authentication decorator
@@ -121,11 +121,7 @@ def create_surview():
             'description': request.form['problem_description'],
             'creator': session.get('user', 'anonymous'),
             'created_at': datetime.now().strftime("%d %b %Y"),
-            'insights': request.form['insights'],
             'status': 'in_progress',
-            'question_count': int(request.form['question_count']),
-            'follow_up_questions': int(request.form['follow_up_questions']),
-            'interview_tone': request.form['interview_tone'],
             'problem_description': request.form['problem_description'],
         }
         
@@ -136,7 +132,7 @@ def create_surview():
             response = client.completions.create(
                 model="gpt-3.5-turbo-instruct",
                 prompt=prompt,
-                max_tokens=200,
+                max_tokens=1000,
                 n=1,
                 stop=None,
                 temperature=0.7,
@@ -211,12 +207,26 @@ def view_surview(surview_id):
     print(surview)
     return render_template('view_surview.html', surview=surview)
 
+@app.route('/surview/agent/<agent_id>')
+def disclaimer(agent_id):
+    return render_template('disclaimer.html', agent_id=agent_id)
+
 @app.route('/surview/<surview_id>/<call_id>')
 def view_call(surview_id, call_id):
-    # TODO: Implement the logic to fetch and display call details
-    return f"Viewing details for call {call_id} of surview {surview_id}"
-
-
+    try:
+        response = get_call_details(surview_id, call_id)
+        app.logger.debug(f"Response from get_call_details: {response}")
+        
+        call_details = extract_call_details(response)
+        if call_details:
+            return render_template('call_template.html', surview_id=surview_id, **call_details)
+        else:
+            flash('Failed to extract call details', 'error')
+    except Exception as e:
+        app.logger.error(f"Error in view_call: {str(e)}")
+        flash(f'An error occurred: {str(e)}', 'error')
+    
+    return redirect(url_for('view_surview', surview_id=surview_id))
 
 if __name__ == '__main__':
     app.run(debug=True)

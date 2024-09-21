@@ -53,43 +53,25 @@
                     <button type="button" class="btn btn-sm btn-outline-secondary ms-2">Contact Us</button>
                 </div>
             </div>
-
-            <form method="POST" action="{{ url_for('create_surview') }}">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" required>
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <form method="POST" action="{{ url_for('create_surview') }}">
+                        <div class="row">
+                            <div class="mb-3 col-md-3">
+                                <input type="text" class="form-control" id="title" name="title" value="Surview Name" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-md-9">
+                                <label for="problem_description" class="form-label col-md-7"><strong>Learning Objective</strong></label>
+                                <p>What would you like to learn? Enter your objective(s) and any additional context you'd like to provide to the AI interviewer.</p>
+                                <textarea class="form-control col-md-7 custom-textarea" id="problem_description" name="problem_description" placeholder="I’m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts." rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Generate Questionnaire</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="insights" class="form-label">What insights do you expect from this surview?</label>
-                    <textarea class="form-control" id="insights" name="insights" rows="3" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="question_count" class="form-label">How many questions do you expect?</label>
-                    <input type="number" class="form-control" id="question_count" name="question_count" value="5" min="1" max="20" required>
-                </div>
-                <div class="mb-3">
-                    <label for="follow_up_questions" class="form-label">Select the maximum number of automated follow-up questions</label>
-                    <select class="form-select" id="follow_up_questions" name="follow_up_questions" required>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="interview_tone" class="form-label">Tone of the Interview</label>
-                    <select class="form-select" id="interview_tone" name="interview_tone" required>
-                        <option value="formal">Formal</option>
-                        <option value="casual">Casual</option>
-                        <option value="friendly">Friendly</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="problem_description" class="form-label">Description of Problem?</label>
-                    <textarea class="form-control" id="problem_description" name="problem_description" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Generate</button>
-            </form>
+            </div>
         </main>
     </div>
 </div>

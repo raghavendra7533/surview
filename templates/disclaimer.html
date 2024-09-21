@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container-fluid bg-light min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="card text-white bg-dark" style="max-width: 500px;">
+        <div class="card-body text-center">
+            <h2 class="card-title mb-4">Let's Talk about Food Ordering</h2>
+            
+            <p class="card-text">Join our quick, AI-moderated voice chat to understand your food ordering habits.</p>
+            
+            <div class="bg-secondary bg-opacity-50 p-3 rounded mb-3">
+                <p class="mb-0">What to expect: 10-minute conversation; AI-moderated (beta testing); Voice chat format</p>
+            </div>
+            
+            <div class="bg-secondary bg-opacity-50 p-3 rounded mb-3">
+                <p class="mb-0">Before you begin: Find a quiet, private space; Ensure 10 minutes of uninterrupted time; Be ready to complete the full session (no pauses or early exits)</p>
+            </div>
+            
+            <p class="fst-italic mb-4">No personally identifiable data is being collected</p>
+            
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="userName" placeholder="Enter your name here">
+                </div>
+                <button type="submit" class="btn btn-success">
+                    <a href="https://calleragent.vercel.app/?id={{agent_id}}">Let's Begin!</a>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

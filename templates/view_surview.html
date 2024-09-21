@@ -64,32 +64,48 @@
 
             <h3 class="mt-4">Questions</h3>
             <div class="questions-list">
-                {% for question in surview['questions'] %}
-                <div class="question-item mb-3">
-                    <h5>{{ question['main_question'] }}</h5>
-                    <ul>
-                        <li><strong>If user gives generic answer:</strong> {{ question['if user gives generic answer'] }}</li>
-                        <li><strong>Probe if needed:</strong> {{ question['probe if needed'] }}</li>
-                        <li><strong>Probe if vague:</strong> {{ question['probe if vague'] }}</li>
-                        <li><strong>Probe gently if broad answer:</strong> {{ question['probe gently if broad answer'] }}</li>
-                    </ul>
+                <div class="accordion accordion-flush" id="questionsAccordion">
+                    {% for question in surview['questions'] %}
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-{{ loop.index }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-{{ loop.index }}" aria-expanded="false"
+                                aria-controls="collapse-{{ loop.index }}">
+                                {{ question['main_question'] }}
+                            </button>
+                        </h2>
+                        <div id="collapse-{{ loop.index }}" class="accordion-collapse collapse"
+                            aria-labelledby="heading-{{ loop.index }}" data-bs-parent="#questionsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled">
+                                    <li><strong>If user gives generic answer:</strong> {{ question['if user gives generic answer'] }}</li>
+                                    <li><strong>Probe if needed:</strong> {{ question['probe if needed'] }}</li>
+                                    <li><strong>Probe if vague:</strong> {{ question['probe if vague'] }}</li>
+                                    <li><strong>Probe gently if broad answer:</strong> {{ question['probe gently if broad answer'] }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
             
-            <button class="btn btn-primary mb-3">
-                <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}" class="text-white text-decoration-none">
+            <button class="btn btn-primary mb-3 mt-4">
+                <!-- <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}" class="text-white text-decoration-none">
+                    Share Link
+                </a> -->
+                <a href="/surview/agent/{{surview['agent_id']}}" class="text-white text-decoration-none">
                     Share Link
                 </a>
             </button>
-
             <div class="calls-section mt-4">
                 <h3>Calls</h3>
                 {% if surview['calls'] %}
                     <ul class="list-group">
                         {% for call in surview['calls'] %}
                             <li class="list-group-item">
-                                <a href="{{ url_for('view_call', surview_id=surview['id'], call_id=call) }}" class="text-decoration-none">
+                                <a href="{{ url_for('view_call', surview_id=surview['id'], call_id=call['call_id']) }}" class="text-decoration-none">
                                     Call {{ loop.index }} - {{ call }}
                                 </a>
                             </li>

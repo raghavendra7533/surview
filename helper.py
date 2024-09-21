@@ -19,18 +19,9 @@ def generate_questions(survey_data):
     # prompt += f"Interview Tone: {survey_data['interview_tone']}\n"
     # prompt += f"Maximum Follow-up Questions: {survey_data['follow_up_questions']}\n\n"
     # prompt += "Provide only the questions and avoid numbering them, separated by newlines."
-    prompt = """
-    ##Projectname
-    Food finder app
-
-    ##Projectoffering
-    Survey to understand why folks order food
-
-    ##Feedbackdesired
-    Which app they’re using
-
-    ##specificprompt
-    I need it to be India specific.
+    prompt = f"""
+    ##input
+    {survey_data['problem_description']}
 
 
     ##Context
@@ -41,7 +32,7 @@ def generate_questions(survey_data):
 
     ##Task
 
-    You're tasked to come up with 6 to 10 questions for ###Projectname based on ##Projectoffering and aligning with #Feedbackdesired. Also factor in specific tonality or request if available in ##specificprompt. 
+    You're tasked to come up with 6 to 10 questions based on the given inputs. Also factor in specific tonality or request if available in ##specificprompt. 
     For each question, you need to come up with optional 1-2 probing questions that may trigger: If the user answer is:
     Vague, general, not detailed, surface level insights or if you can think of anything better
     Probing questions would only trigger if something happens or if the user says something.
@@ -54,20 +45,20 @@ def generate_questions(survey_data):
     For questions you think may require probing, you may create 1-2 probing questions. I’ve given some ideas of probe in ##output. Feel free to change as you deem fit.
     I’d like to iterate, the probing questions aren’t necessary for all questions. See where they’re needed.
     ##Output 
-    Q1: {main question comes}
+    Q1: [main question comes]
     Probe if vague: probe question
     If the answer is general, probe with: probe question
     Probe if needed:
     Probe gently if they give a broad answer: 
     If the user gives a generic answer, probe with:
-    Q2: {main question comes}
+    Q2: [main question comes]
     Probe if vague: probe question
     If the answer is general, probe with: probe question
     Probe if needed:
     Probe gently if they give a broad answer: 
     If the user gives a generic answer, probe with:
     ...
-    {Same format as above}
+    [Same format as above]
 
     Give me in a JSON format but with probing questions in the same object as the main question but all 10 questions must be objects in a list where each object has a key-value pair called the main question and 4 other probing questions as the other four key value pairs in the same object, remember there should be only 10 objects in that list.
     With these exact key-value pairs:
@@ -82,15 +73,26 @@ def generate_questions(survey_data):
 
 def generate_retell_prompt(username, surview_id):
     question_list = []
-    retell_prompt = """Context:\nYou're the world's best UX interviewer. You've read 5-act user interviews by Google Ventures and Mom Test books on how to conduct a user interview. We’ve included the broad questions to cover along with the line of probing if needed.\n\nTone:\nEngage with small friendly talks with the user from time to time, make it empathetic but don't deviate too much from the context of the conversation.\n\nGuardrails:\nIf you feel the user is vaguely answering the questions or giving surface level insights, please reiterate to answer the question thoughtfully so that we can get better insights and then ask the same question again.\nIf the user is saying irrelevant stuff or talking to someone else or about something out of scope, please give a friendly warning. And if it repeats, cut the call.\nIf there is a lot of noise in the background, ask the user to move to a more isolated space.\nRemember what the user said in the whole conversation so that you join the dots from the previous conversation.\nAnalyze the answer given by the user and see how it fits the question you asked.\n\nBegin first with this:\nHello there! I'm EVA, an AI designed to gather feedback. Today, I'm gathering feedback on {what’s the project about}.\nThis conversation will take about 10 minutes and will include 6 to 10 questions. Ready to share your thoughts?\n\nIf the response from the user is affirmative, begin:\nGreat! May I know your name before we begin?\n\nThen begin with the questions."""
+    retell_prompt = """Context:\nYou're the world's best UX interviewer. You've read 5-act user interviews by Google Ventures and Mom Test books on how to conduct a user interview. We’ve included the broad questions to cover along with the line of probing if needed.\n\nTone:\nEngage with small friendly talks with the user from time to time, make it empathetic but don't deviate too much from the context of the conversation.\n\nGuardrails:\nIf you feel the user is vaguely answering the questions or giving surface level insights, please reiterate to answer the question thoughtfully so that we can get better insights and then ask the same question again.\nIf the user is saying irrelevant stuff or talking to someone else or about something out of scope, please give a friendly warning. And if it repeats, cut the call.\nIf there is a lot of noise in the background, ask the user to move to a more isolated space.\nRemember what the user said in the whole conversation so that you join the dots from the previous conversation.\nAnalyze the answer given by the user and see how it fits the question you asked.\n\nBegin first with this:\nHello there! I'm EVA, an AI designed to gather feedback. Today, I'm gathering feedback on {what’s the project about}.\nThis conversation will take about 10 minutes and will include 6 to 10 questions. Ready to share your thoughts?\n\nIf the response from the user is affirmative, begin:\nGreat! May I know your name before we begin?\n\nThen begin with the questions.\n\n"""
     with open ("surviews.json", "r") as f:
         surviews = json.load(f)
     for surview in surviews:
         if username == surview['creator'] and surview_id == surview['id']:
             questions = surview['questions']
     for question in questions:
-        retell_prompt += question['main_question']
+        retell_prompt += question['main_question'] + "\n"
+        if question['if user gives generic answer']:
+            retell_prompt += "if user gives generic answer " + question['if user gives generic answer'] + "\n"
+        if question['probe if needed']:
+            retell_prompt += "probe if needed, with " + question['probe if needed'] + "\n"
+        if question['probe if vague']:
+            retell_prompt += "probe if vague "+ question['probe if vague'] + "\n"
+        if question['probe gently if broad answer']:
+            retell_prompt += "probe gently if broad answer" + question['probe gently if broad answer'] + "\n\n"
+        
     return retell_prompt
+
+print(generate_retell_prompt("raghav7533", "183337"))
     
 
 
@@ -386,5 +388,35 @@ def get_calls(surview_id, agent_id):
     else:
         print(f"Error: {response.status_code}, {response.text}")
 
-def get_call_details(call_id):
-    pass
+def get_call_details(surview_id, call_id):
+    url = f"https://api.retellai.com/v2/get-call/{call_id}"
+    payload = ""
+    headers = {
+    'Authorization': 'Bearer key_cc65d545d49d554d8f616982fb3f'
+    }
+    response = requests.request("GET", url, headers=headers, data=payload)
+    extracted_data = extract_call_details(response)
+    print("HHHHHHH"+extracted_data)
+    return extracted_data
+
+
+def extract_call_details(response):
+    if isinstance(response, dict):
+        # If response is already a dictionary
+        response_data = response
+    elif hasattr(response, 'json'):
+        # If response is a requests.Response object
+        if response.status_code != 200:
+            return None
+        response_data = response.json()
+    else:
+        # If response is neither a dict nor a requests.Response object
+        return None
+
+    transcript = response_data.get('transcript', 'Transcript not available')
+    call_summary = response_data['call_analysis']['call_summary']
+    return {
+        'call_id': response_data.get('call_id', 'Unknown'),
+        'transcript': transcript,
+        'summary': call_summary
+    }

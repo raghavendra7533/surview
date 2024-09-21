@@ -164,3 +164,8 @@ body {
     padding: 15px;
     margin-bottom: 15px;
 }
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

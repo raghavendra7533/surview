@@ -118,3 +118,18 @@ body {
 .logo.signup img {
     width: 150px !important;
 }
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.surview-form {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fff;
+}
+.custom-textarea{
+    height: 8rem;
+    padding: 0.5rem;
+}

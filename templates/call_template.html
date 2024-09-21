@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebar" class="sidebar">
@@ -40,25 +44,17 @@
             </div>
         </nav>
 
+        <!-- Main content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <h1>Edit Survey Questions</h1>
-            <form method="POST">
-                {% for question in questions %}
-                <div class="mb-3">
-                    <label for="question{{ loop.index }}" class="form-label">Question {{ loop.index }}</label>
-                    <input type="text" class="form-control" id="question{{ loop.index }}" name="questions[]" value="{{ question['main_question'] }}" required>
-                    <!-- <label for="if_user_gives_generic_answer" class="form-label">If user gives generic answer</label>
-                    <input type="text" class="form-control" id="if_user_gives_generic_answer_{{ loop.index }}" value="{{ question['if user gives generic answer'] }}">
-                    <label for="probe_if_needed" class="form-label">probe_if_needed</label>
-                    <input type="text" class="form-control" id="probe_if_needed_{{ loop.index }}" value="{{ question['probe if needed'] }}">
-                    <label for="probe_if_vague" class="form-label">probe_if_vague</label>
-                    <input type="text" class="form-control" id="probe_if_vague_{{ loop.index }}" value="{{ question['probe if vague'] }}">
-                    <label for="probe_gently_if_broad_answer" class="form-label">probe_gently_if_broad_answer</label>
-                    <input type="text" class="form-control" id="probe_gently_if_broad_answer_{{ loop.index }}" value="{{ question['probe gently if broad answer'] }}"> -->
-                </div>
-                {% endfor %}
-                <button type="submit" class="btn btn-primary">Save Questions</button>
-            </form>
+            <div class="container mt-4">
+                <h1>Call Details</h1>
+                <p><strong>Call ID:</strong> {{ call_id }}</p>
+                <h2>Summary</h2>
+                <p>{{ summary }}</p>
+                <h2>Transcript</h2>
+                <pre>{{ transcript }}</pre>
+                <a href="{{ url_for('view_surview', surview_id=surview_id) }}" class="btn btn-primary">Back to Surview</a>
+            </div>
         </main>
     </div>
 </div>
