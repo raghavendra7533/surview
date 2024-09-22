@@ -9,7 +9,7 @@ from helper import generate_questions, create_call, extract_complete_questions, 
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for sessions and flashing messages
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = ''
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # User authentication decorator

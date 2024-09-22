@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlearn Product Management Course Feedback Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .chart {
+            width: 48%;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .accordion {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            margin-bottom: 5px;
+        }
+        .active, .accordion:hover {
+            background-color: #ddd;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+        .insights-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .insights-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .relevance {
+            font-size: 0.8em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unlearn Product Management Course Feedback Dashboard</h1>
+    <p>Sample Size: 8 participants</p>
+
+    <div class="chart-container">
+        <div class="chart">
+            <canvas id="expectationsChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="newSkillsChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="thinkingChangeChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="instructorFeedbackChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="activitiesValueChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="communityEngagementChart"></canvas>
+        </div>
+    </div>
+
+    <h2>Participant Quotes</h2>
+    <button class="accordion">Expectations</button>
+    <div class="panel">
+        <ul id="expectationsQuotes"></ul>
+    </div>
+
+    <button class="accordion">New Skills</button>
+    <div class="panel">
+        <ul id="newSkillsQuotes"></ul>
+    </div>
+
+    <button class="accordion">Thinking Change</button>
+    <div class="panel">
+        <ul id="thinkingChangeQuotes"></ul>
+    </div>
+
+    <button class="accordion">Instructor Feedback</button>
+    <div class="panel">
+        <ul id="instructorFeedbackQuotes"></ul>
+    </div>
+
+    <button class="accordion">Activities Value</button>
+    <div class="panel">
+        <ul id="activitiesValueQuotes"></ul>
+    </div>
+
+    <button class="accordion">Community Engagement</button>
+    <div class="panel">
+        <ul id="communityEngagementQuotes"></ul>
+    </div>
+
+    <h2>New Insights Discovered (Sorted by Relevance)</h2>
+    <ul id="insightsList" class="insights-list"></ul>
+
+    <script>
+        // Chart data and creation
+        const expectationsData = [{ name: 'Overall Satisfaction', score: 7.5 }];
+        const newSkillsData = [
+            { name: 'User Research', frequency: 8 },
+            { name: 'Problem Solving', frequency: 7 },
+            { name: 'Product Roadmap', frequency: 6 },
+            { name: 'AI/No-Code Tools', frequency: 5 },
+            { name: 'Communication', frequency: 4 },
+        ];
+        const thinkingChangeData = [
+            { name: 'Problem Analysis', change: 8 },
+            { name: 'User Empathy', change: 7 },
+            { name: 'Solution Approach', change: 9 },
+            { name: 'Team Collaboration', change: 8 },
+            { name: 'Overall Perspective', change: 7 },
+        ];
+        const instructorFeedbackData = [
+            { name: 'Overall', rating: 8 },
+            { name: 'Sarush', rating: 9 },
+            { name: 'Ayush', rating: 8 },
+            { name: 'Sai', rating: 8 },
+            { name: 'Other Mentors', rating: 7 },
+        ];
+        const activitiesValueData = [
+            { name: 'Group Projects', value: 9 },
+            { name: 'User Research', value: 8 },
+            { name: 'PRD Writing', value: 7 },
+            { name: 'UI/UX Design', value: 8 },
+            { name: 'Real-world Problems', value: 9 },
+        ];
+        const communityEngagementData = [
+            { name: 'Peer Learning', satisfaction: 9 },
+            { name: 'Networking', satisfaction: 8 },
+            { name: 'Collaboration', satisfaction: 9 },
+            { name: 'Community Support', satisfaction: 8 },
+            { name: 'Diversity of Perspectives', satisfaction: 9 },
+        ];
+
+        function createChart(ctx, data, label, dataKey) {
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(item => item.name),
+                    datasets: [{
+                        label: label,
+                        data: data.map(item => item[dataKey]),
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10
+                        }
+                    }
+                }
+            });
+        }
+
+        createChart(document.getElementById('expectationsChart').getContext('2d'), expectationsData, 'Expectations', 'score');
+        createChart(document.getElementById('newSkillsChart').getContext('2d'), newSkillsData, 'New Skills', 'frequency');
+        createChart(document.getElementById('thinkingChangeChart').getContext('2d'), thinkingChangeData, 'Thinking Change', 'change');
+        createChart(document.getElementById('instructorFeedbackChart').getContext('2d'), instructorFeedbackData, 'Instructor Feedback', 'rating');
+        createChart(document.getElementById('activitiesValueChart').getContext('2d'), activitiesValueData, 'Activities Value', 'value');
+        createChart(document.getElementById('communityEngagementChart').getContext('2d'), communityEngagementData, 'Community Engagement', 'satisfaction');
+
+        // Quotes data
+        const quotes = {
+            expectations: [
+                "My initial expectations was met, and even more was met. I didn't expect this to get me this good in product management.",
+                "I think it was, uh, process of learning and unlearning a lot of things, and I think that It met all of my expectations and the mood to it, which I'm learning these days.",
+                "Yeah. I think it was okay. Uh, there were certain experts like the whole community and the engagement that was top notch.",
+            ],
+            newSkills: [
+                "I learned some communication skills, how to stand up for yourself, and how to do do a good research and validate your point even though everyone is saying some other thing.",
+                "So the product road map, how a product is built from inception to end, what all goes in research, surveys, how to do user interviews, how to you know, get secondary research done.",
+                "AI. I always underestimate that, uh, the efforts of AI. Right? Like, what are the use cases of AI? I feel my whole course fee pay is paid for because I learned AI no no good no code tools, low code tools.",
+            ],
+            thinkingChange: [
+                "Initially, I didn't have much thing to think about. This is how product management is and everything. So I entered with a blank space in my mind without having any preconceived notion about product management.",
+                "So, initially, my approach was to just, uh, go down the solution lane without even thinking about the actual problem. But now, uh, whenever someone comes up with a problem, I dig it more.",
+                "Now I can empathize with product managers as well as developers. People who work with PMs. What are their pain points? Where do they struggle?",
+            ],
+            instructorFeedback: [
+                "When you talk about mentor, he is good. He knows how to do product management, and he wanted to impart the same knowledge as He has To us, and he did a pretty good job in that.",
+                "Sarush had extensive knowledge. Ayush has had good amount of technical understanding.",
+                "It's Sai. So he has helped me, um, giving the loopholes, uh, what I'm not able to see, uh, during submitting my assignment.",
+            ],
+            activitiesValue: [
+                "We were creating user Nice. Uh, you know, User flows and coming up with solutions which, uh, you know, created an impact.",
+                "So designing a app for unlearn itself was the activity which stood out for me where we designed a user interface for unlearn where you can take attendance and polls of from the students and the admin people can actually maintain it.",
+                "PRDs writing PRDs was a very challenging task.",
+            ],
+            communityEngagement: [
+                "Amazing course community. Networking helps pure people are up for helping. They are not judgmental. Uh, everyone is open to learning. Everyone is open to burn the midnight oil and work extensively and passionately and with a lot of dedication.",
+                "That was the best part I could say, uh, because working in silo every day will not yield results. We have to learn from each other.",
+                "I understood the power of community and power of community communicative learning So, yes, that was a new one for me.",
+            ],
+        };
+
+        // Populate quotes
+        Object.keys(quotes).forEach(key => {
+            const ul = document.getElementById(`${key}Quotes`);
+            quotes[key].forEach(quote => {
+                const li = document.createElement('li');
+                li.textContent = quote;
+                ul.appendChild(li);
+            });
+        });
+
+        // Accordion functionality
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // New insights
+        const newInsights = [
+            {
+                insight: "Strong appeal for career changers looking to transition into product management roles.",
+                relevance: 10
+            },
+            {
+                insight: "High value placed on practical, real-world applications and projects.",
+                relevance: 9
+            },
+            {
+                insight: "Unexpected but highly valued introduction to AI and no-code tools.",
+                relevance: 9
+            },
+            {
+                insight: "Group dynamics and team assignments significantly influence the learning experience.",
+                relevance: 8
+            },
+            {
+                insight: "Increased confidence in product management skills after completing the course.",
+                relevance: 8
+            },
+            {
+                insight: "Mixed opinions on content depth, with some wanting more in-depth coverage.",
+                relevance: 7
+            },
+            {
+                insight: "Challenges in balancing course commitments with existing responsibilities.",
+                relevance: 7
+            },
+            {
+                insight: "Desire for increased mentor involvement and more structured guidance.",
+                relevance: 6
+            },
+            {
+                insight: "Appreciation for the diverse perspectives brought by fellow participants.",
+                relevance: 6
+            },
+            {
+                insight: "Shift in thinking from solution-first to problem-first approach.",
+                relevance: 5
+            }
+        ];
+
+        // Sort and populate insights
+        newInsights.sort((a, b) => b.relevance - a.relevance);
+        const insightsList = document.getElementById('insightsList');
+        newInsights.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${item.insight}</strong> <span class="relevance">(Relevance: ${item.relevance}/10)</span>`;
+            insightsList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
