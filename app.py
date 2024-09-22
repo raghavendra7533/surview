@@ -9,7 +9,7 @@ from helper import generate_questions, create_call, extract_complete_questions, 
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for sessions and flashing messages
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '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'
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # User authentication decorator
@@ -188,11 +188,18 @@ def edit_questions():
     with open('surviews.json', 'r') as f:
         json_data = json.load(f)
     response = create_call(json_data[-1]['title'], session['user'], json_data[-1]['id'])
-    # print(response)
     if request.method == 'POST':
         print(questions)
+        with open("surviews.json", "r") as f:
+            json_data = json.load(f)
+            agent_id = json_data[-1]['agent_id']
         return redirect(url_for('homepage'))
     return render_template('edit_questions.html', questions=questions)
+
+@app.route('/preview/<agent_id>')
+def preview(agent_id):
+    return redirect("https://calleragent.vercel.app/?id="+agent_id)
+
 
 @app.route('/surview/<surview_id>')
 def view_surview(surview_id):
@@ -202,6 +209,8 @@ def view_surview(surview_id):
     surview = next((s for s in surviews if s['id'] == surview_id), None)
     
     get_calls(surview_id ,surview['agent_id'])
+    if surview['calls']:
+        print(surview['calls'])
     if surview is None:
         abort(404) 
     print(surview)
@@ -215,11 +224,12 @@ def disclaimer(agent_id):
 def view_call(surview_id, call_id):
     try:
         response = get_call_details(surview_id, call_id)
+        print(response)
         app.logger.debug(f"Response from get_call_details: {response}")
         
         call_details = extract_call_details(response)
         if call_details:
-            return render_template('call_template.html', surview_id=surview_id, **call_details)
+            return render_template('call_template.html', surview_id=surview_id, call_details=call_details)
         else:
             flash('Failed to extract call details', 'error')
     except Exception as e:
@@ -227,6 +237,12 @@ def view_call(surview_id, call_id):
         flash(f'An error occurred: {str(e)}', 'error')
     
     return redirect(url_for('view_surview', surview_id=surview_id))
+
+@app.route('/surview/<surview_id>/insights')
+def view_insights(surview_id):
+    # You can fetch any necessary data for the surview here
+    # For now, we'll just render a template that will load our React app
+    return render_template('insights_dashboard.html', surview_id=surview_id)
 
 if __name__ == '__main__':
     app.run(debug=True)

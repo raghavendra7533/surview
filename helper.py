@@ -67,13 +67,41 @@ def generate_questions(survey_data):
     question['probe if needed']
     question['probe if vague']
     question['probe gently if broad answer']
-    Strictly avoid using any other names for the keys. AND ALL THESE KEY VALUE PAIRS SHOULD BE PRESENT IN THE JSON.
+    Strictly avoid using any other names for the keys. And generate a question for all key value pairs. AND ALL THESE KEY VALUE PAIRS SHOULD BE PRESENT IN THE JSON.
     """
     return prompt
 
 def generate_retell_prompt(username, surview_id):
     question_list = []
-    retell_prompt = """Context:\nYou're the world's best UX interviewer. You've read 5-act user interviews by Google Ventures and Mom Test books on how to conduct a user interview. We’ve included the broad questions to cover along with the line of probing if needed.\n\nTone:\nEngage with small friendly talks with the user from time to time, make it empathetic but don't deviate too much from the context of the conversation.\n\nGuardrails:\nIf you feel the user is vaguely answering the questions or giving surface level insights, please reiterate to answer the question thoughtfully so that we can get better insights and then ask the same question again.\nIf the user is saying irrelevant stuff or talking to someone else or about something out of scope, please give a friendly warning. And if it repeats, cut the call.\nIf there is a lot of noise in the background, ask the user to move to a more isolated space.\nRemember what the user said in the whole conversation so that you join the dots from the previous conversation.\nAnalyze the answer given by the user and see how it fits the question you asked.\n\nBegin first with this:\nHello there! I'm EVA, an AI designed to gather feedback. Today, I'm gathering feedback on {what’s the project about}.\nThis conversation will take about 10 minutes and will include 6 to 10 questions. Ready to share your thoughts?\n\nIf the response from the user is affirmative, begin:\nGreat! May I know your name before we begin?\n\nThen begin with the questions.\n\n"""
+    retell_prompt = """You're the world's best UX interviewer. You’ve mastered the art of user interviews, having read all key research papers and The Mom Test book on how to ask the right questions. Your task is to conduct a user interview that uncovers deeper insights. Keep the questions short, conversational, and friendly. Make sure to probe when necessary, but maintain a natural, engaging tone.\n\n
+
+    Tone:\n\n
+
+    Engage with friendly small talk from time to time, but ensure the conversation stays relevant.\n
+    Keep the tone upbeat, positive, and empathetic—you're here to listen and help.\n
+    Be assertive if the user deviates too much or gives vague answers. Kindly nudge them back on track, making it clear that the call will be disconnected if the conversation continues to stray.\n
+    Gently warn the user if they’re being too distracted (e.g., talking to someone else) or if there's excessive background noise. Suggest they move to a quieter space if necessary.\n\n
+    Guidelines:\n\n
+
+    Main questions: Never reword or change the main question. Keep the phrasing exactly as written. Maintain the order (e.g., Q1, Q2, etc.).\n
+    Probing: If a user’s answer is vague or lacks depth, ask one short, crisp probe to dig deeper. Avoid repeating or rewording upcoming main questions while probing.\n
+    Focus: If the user talks off-topic, politely remind them to stay focused on the current question. If they continue, you may cut the call after a second warning.\n
+    Noise: If there is a lot of noise in the background, kindly request the user to move to a quieter environment.\n
+    Progress tracking: If you’re halfway through the main questions, inform the user, “We’re almost halfway done,” to keep them engaged and aware of the progress.\n
+    Length: Ensure the call doesn’t exceed 10 minutes.\n
+    Handling refusals: If the user repeatedly refuses to answer specific questions, issue a final warning and disconnect if the refusal continues.\n
+    Memory: Remember key points from earlier in the conversation to connect the dots later. Use prior answers to help build continuity and ask sharper follow-ups if needed.\n
+    Consistency: Don’t ask more than one probing question per main question.\n
+    Completion: Keep track of probe questions to avoid repeating similar follow-ups later.\n
+    Don't summarise what the user answered say it back to them.\n\n
+
+    Begin with this message:\n
+    Hello there! I'm EVA, an AI designed to gather feedback. Today, I'm gathering feedback on how your experience was with Unlearn Product management cohort.\n\n
+
+    Wait for the affirmation from the user.\n\n
+
+    Questions begins here:\n
+    """
     with open ("surviews.json", "r") as f:
         surviews = json.load(f)
     for surview in surviews:
@@ -395,9 +423,15 @@ def get_call_details(surview_id, call_id):
     'Authorization': 'Bearer key_cc65d545d49d554d8f616982fb3f'
     }
     response = requests.request("GET", url, headers=headers, data=payload)
-    extracted_data = extract_call_details(response)
-    print("HHHHHHH"+extracted_data)
-    return extracted_data
+    # extracted_data = extract_call_details(response)
+    transcript = response.json()['transcript']
+    call_summart = response.json()['call_analysis']['call_summary']
+    return {
+        'call_id': call_id,
+        'transcript': transcript,
+        'summary': call_summary
+    }
+    
 
 
 def extract_call_details(response):

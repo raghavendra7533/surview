@@ -19,16 +19,6 @@
                             <i class="bi bi-plus-square"></i> <span>Create Surview</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="bi bi-folder"></i> <span>Workspace</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="bi bi-gear"></i> <span>Settings</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="user-info">
@@ -99,13 +89,23 @@
                     Share Link
                 </a>
             </button>
+            <button class="btn btn-secondary mb-3 mt-4">
+                <a href="{{ url_for('view_insights', surview_id=surview['id']) }}" class="text-white text-decoration-none">
+                    View Insights
+                </a>
+            </button>
+            <button class="btn btn-secondary mb-3 mt-4">
+                <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}" class="text-white text-decoration-none">
+                    View Insights
+                </a>
+            </button>
             <div class="calls-section mt-4">
                 <h3>Calls</h3>
                 {% if surview['calls'] %}
                     <ul class="list-group">
                         {% for call in surview['calls'] %}
                             <li class="list-group-item">
-                                <a href="{{ url_for('view_call', surview_id=surview['id'], call_id=call['call_id']) }}" class="text-decoration-none">
+                                <a href="{{ url_for('view_call', surview_id=surview['id'], call_id=call) }}" class="text-decoration-none">
                                     Call {{ loop.index }} - {{ call }}
                                 </a>
                             </li>
