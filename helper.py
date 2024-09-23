@@ -72,10 +72,15 @@ def generate_questions(survey_data):
     return prompt
 
 def generate_retell_prompt(username, surview_id):
+    with open('surviews.json', "r") as f:
+        json_data = json.load(f)
+    for item in json_data:
+        if item['id'] == surview_id:
+            surview = item
     question_list = []
-    retell_prompt = """You're the world's best UX interviewer. You’ve mastered the art of user interviews, having read all key research papers and The Mom Test book on how to ask the right questions. Your task is to conduct a user interview that uncovers deeper insights. Keep the questions short, conversational, and friendly. Make sure to probe when necessary, but maintain a natural, engaging tone.\n\n
+    retell_prompt = f"""You're the world's best UX interviewer. You’ve mastered the art of user interviews, having read all key research papers and The Mom Test book on how to ask the right questions. Your task is to conduct a user interview that uncovers deeper insights. Keep the questions short, conversational, and friendly. Make sure to probe when necessary, but maintain a natural, engaging tone.
 
-    Tone:\n\n
+    Tone:
 
     Engage with friendly small talk from time to time, but ensure the conversation stays relevant.\n
     Keep the tone upbeat, positive, and empathetic—you're here to listen and help.\n
@@ -96,7 +101,7 @@ def generate_retell_prompt(username, surview_id):
     Don't summarise what the user answered say it back to them.\n\n
 
     Begin with this message:\n
-    Hello there! I'm EVA, an AI designed to gather feedback. Today, I'm gathering feedback on how your experience was with Unlearn Product management cohort.\n\n
+    Hello there! I'm EVA, an AI designed to gather feedback. Today, I'm gathering feedback on how your experience was with {surview['problem_description']}\n\n
 
     Wait for the affirmation from the user.\n\n
 
@@ -109,18 +114,9 @@ def generate_retell_prompt(username, surview_id):
             questions = surview['questions']
     for question in questions:
         retell_prompt += question['main_question'] + "\n"
-        if question['if user gives generic answer']:
-            retell_prompt += "if user gives generic answer " + question['if user gives generic answer'] + "\n"
-        if question['probe if needed']:
-            retell_prompt += "probe if needed, with " + question['probe if needed'] + "\n"
         if question['probe if vague']:
             retell_prompt += "probe if vague "+ question['probe if vague'] + "\n"
-        if question['probe gently if broad answer']:
-            retell_prompt += "probe gently if broad answer" + question['probe gently if broad answer'] + "\n\n"
-        
     return retell_prompt
-
-print(generate_retell_prompt("raghav7533", "183337"))
     
 
 

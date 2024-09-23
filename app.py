@@ -209,8 +209,6 @@ def view_surview(surview_id):
     surview = next((s for s in surviews if s['id'] == surview_id), None)
     
     get_calls(surview_id ,surview['agent_id'])
-    if surview['calls']:
-        print(surview['calls'])
     if surview is None:
         abort(404) 
     print(surview)

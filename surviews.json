@@ -1,33 +1,5 @@
 [
   {
-    "id": "498221",
-    "title": "asc jj",
-    "description": "asc jj",
-    "creator": "raghav7533",
-    "created_at": "21 Sep 2024",
-    "insights": "asc jj",
-    "status": "in_progress",
-    "question_count": 5,
-    "follow_up_questions": 0,
-    "interview_tone": "formal",
-    "problem_description": "asc jj",
-    "questions": [
-      {
-        "main_question": "Which food delivery app do you use most frequently in India?",
-        "if user gives generic answer": "Can you tell me more about why you use that app?",
-        "probe if needed": "What factors do you consider when choosing which app to use?",
-        "probe if vague": "Can you provide more specific details about your experience with that app?",
-        "probe gently if broad answer": "Can you give me an example of a time when you used that app to order food?"
-      }
-    ],
-    "agent_id": "agent_5b3497d91fb1173259a67a0fcc",
-    "calls": [
-      "call_ef7913fbe1b2c2b122f12c26bca",
-      "call_f2c43dba1d4a496170bb44eafd2",
-      "call_a316883b03b1e732b62ce1996ff"
-    ]
-  },
-  {
     "id": "204621",
     "title": "Surview Namasce",
     "description": "asc",
@@ -80,6 +52,11 @@
     ],
     "agent_id": "agent_7122ce34c0bdf065ff19599113",
     "calls": [
+      "call_17fad32856011a0503324b365b8",
+      "call_14c7ce10b415ab72faaeed06eb5",
+      "call_d23d06cf1a48c4f11222d261e16",
+      "call_ffb00496665cb805e2182e168c0",
+      "call_2cf6c27604ca0904f2a3d2ec114",
       "call_28e5c069e308007bd7debf58db9",
       "call_ef00a0e63ca83ec9a8223dea59f",
       "call_95b705ca52b33ecfe4a432b9150",
@@ -1523,5 +1500,1419 @@
       }
     ],
     "agent_id": "agent_c86e95be05b6d2e5c7971b3aaa"
+  },
+  {
+    "id": "246121",
+    "title": "Surview Name",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "What did you like about the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you give me a specific example of something you liked?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "Were there any missing topics or skills in the Unlearn Product Management course that you wish were covered?",
+        "if user gives generic answer": "Can you provide more specific information on what was missing?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "How was your experience with the mentors and instructors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific information on your experience?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "What improvements would you suggest for future cohorts of the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific suggestions?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "How would you rate your overall experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific information on your rating?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "What aspects of the Unlearn Product Management course did you find most valuable?",
+        "if user gives generic answer": "Can you provide more specific information on what you found valuable?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "Which topics or skills in the Unlearn Product Management course did you find least valuable?",
+        "if user gives generic answer": "Can you provide more specific information on what you found least valuable?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "How would you rate the structure and organization of the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific information on your rating?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "Did you feel like the Unlearn Product Management course adequately prepared you for a career in product management?",
+        "if user gives generic answer": "Can you provide more specific information on why or why not?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      },
+      {
+        "main_question": "Is there anything else you would like to share about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific information on what you would like to share?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give me a specific example?"
+      }
+    ],
+    "agent_id": "agent_cf74639f19d4c3afdcf2e42bab",
+    "calls": [
+      "call_691093a417f2a83f3658d5b6850",
+      "call_0e2f01cf0077c06c0ec8e64ebc9"
+    ]
+  },
+  {
+    "id": "136993",
+    "title": "Surview Name",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your overall experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific details about what you liked or didn't like?",
+        "probe if needed": "What aspects of the course stood out to you the most?",
+        "probe if vague": "Could you elaborate on any specific areas that you felt could be improved?",
+        "probe gently if broad answer": "Can you give an example of a particularly positive or negative experience you had in the course?"
+      },
+      {
+        "main_question": "What topics or skills do you feel were missing from the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you give more specific examples of topics or skills you wished were covered?",
+        "probe if needed": "Were there any specific areas of product management that you were hoping to learn more about?",
+        "probe if vague": "Can you provide more details on what you felt was lacking in the course?",
+        "probe gently if broad answer": "Can you give an example of a specific skill or topic that you felt was not adequately covered?"
+      },
+      {
+        "main_question": "How would you describe your experience with the mentors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of your interactions with the mentors?",
+        "probe if needed": "Were there any particular mentors that stood out to you?",
+        "probe if vague": "Can you elaborate on any positive or negative experiences you had with the mentors?",
+        "probe gently if broad answer": "Can you give an example of a specific mentor that you felt was particularly helpful or not helpful?"
+      },
+      {
+        "main_question": "What was your experience like with the instructors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you give more specific examples of your interactions with the instructors?",
+        "probe if needed": "Were there any particular instructors that stood out to you?",
+        "probe if vague": "Could you provide more details on any positive or negative experiences you had with the instructors?",
+        "probe gently if broad answer": "Can you give an example of a specific instructor that you felt was particularly effective or not effective?"
+      },
+      {
+        "main_question": "What suggestions do you have for enhancing future cohorts of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of your suggestions?",
+        "probe if needed": "Were there any particular areas of the course that you feel could be improved?",
+        "probe if vague": "Can you elaborate on any specific changes or improvements you would suggest?",
+        "probe gently if broad answer": "Can you give an example of a specific suggestion you have for the course?"
+      },
+      {
+        "main_question": "In your opinion, what were the most valuable aspects of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of what you found valuable?",
+        "probe if needed": "Were there any particular lessons or activities that you found particularly beneficial?",
+        "probe if vague": "Can you elaborate on any specific aspects of the course that you found valuable?",
+        "probe gently if broad answer": "Can you give an example of a specific aspect of the course that you found valuable?"
+      },
+      {
+        "main_question": "What were some challenges you faced during the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of challenges you faced?",
+        "probe if needed": "Were there any particular areas of the course that you found challenging?",
+        "probe if vague": "Can you elaborate on any specific difficulties you encountered in the course?",
+        "probe gently if broad answer": "Can you give an example of a specific challenge you faced in the course?"
+      },
+      {
+        "main_question": "How would you rate the overall structure and organization of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific details on what you liked or didn't like about the structure and organization?",
+        "probe if needed": "Were there any particular aspects of the structure or organization that stood out to you?",
+        "probe if vague": "Can you elaborate on any specific areas of the structure or organization that you felt could be improved?",
+        "probe gently if broad answer": "Can you give an example of a specific aspect of the structure or organization that you felt was particularly effective or not effective?"
+      }
+    ],
+    "agent_id": "agent_2033746d3c3b2143ec019b134b",
+    "calls": []
+  },
+  {
+    "id": "163375",
+    "title": "Unlearn Product Experience",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your overall experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific details about what you liked or didn't like?",
+        "probe if needed": "What aspects of the course stood out to you the most?",
+        "probe if vague": "Could you elaborate on any specific areas that you felt could be improved?",
+        "probe gently if broad answer": "Can you give an example of a particularly positive or negative experience you had in the course?"
+      },
+      {
+        "main_question": "What topics or skills do you feel were missing from the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you give more specific examples of topics or skills you wished were covered?",
+        "probe if needed": "Were there any specific areas of product management that you were hoping to learn more about?",
+        "probe if vague": "Can you provide more details on what you felt was lacking in the course?",
+        "probe gently if broad answer": "Can you give an example of a specific skill or topic that you felt was not adequately covered?"
+      },
+      {
+        "main_question": "How would you describe your experience with the mentors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of your interactions with the mentors?",
+        "probe if needed": "Were there any particular mentors that stood out to you?",
+        "probe if vague": "Can you elaborate on any positive or negative experiences you had with the mentors?",
+        "probe gently if broad answer": "Can you give an example of a specific mentor that you felt was particularly helpful or not helpful?"
+      },
+      {
+        "main_question": "What was your experience like with the instructors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you give more specific examples of your interactions with the instructors?",
+        "probe if needed": "Were there any particular instructors that stood out to you?",
+        "probe if vague": "Could you provide more details on any positive or negative experiences you had with the instructors?",
+        "probe gently if broad answer": "Can you give an example of a specific instructor that you felt was particularly effective or not effective?"
+      },
+      {
+        "main_question": "What suggestions do you have for enhancing future cohorts of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of your suggestions?",
+        "probe if needed": "Were there any particular areas of the course that you feel could be improved?",
+        "probe if vague": "Can you elaborate on any specific changes or improvements you would suggest?",
+        "probe gently if broad answer": "Can you give an example of a specific suggestion you have for the course?"
+      },
+      {
+        "main_question": "In your opinion, what were the most valuable aspects of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of what you found valuable?",
+        "probe if needed": "Were there any particular lessons or activities that you found particularly beneficial?",
+        "probe if vague": "Can you elaborate on any specific aspects of the course that you found valuable?",
+        "probe gently if broad answer": "Can you give an example of a specific aspect of the course that you found valuable?"
+      },
+      {
+        "main_question": "What were some challenges you faced during the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples of challenges you faced?",
+        "probe if needed": "Were there any particular areas of the course that you found challenging?",
+        "probe if vague": "Can you elaborate on any specific difficulties you encountered in the course?",
+        "probe gently if broad answer": "Can you give an example of a specific challenge you faced in the course?"
+      },
+      {
+        "main_question": "How would you rate the overall structure and organization of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific details on what you liked or didn't like about the structure and organization?",
+        "probe if needed": "Were there any particular aspects of the structure or organization that stood out to you?",
+        "probe if vague": "Can you elaborate on any specific areas of the structure or organization that you felt could be improved?",
+        "probe gently if broad answer": "Can you give an example of a specific aspect of the structure or organization that you felt was particularly effective or not effective?"
+      }
+    ],
+    "agent_id": "agent_7122ce34c0bdf065ff19599113",
+    "calls": [
+      "call_7d901b9c31ac08b7c91d5ca4bf2",
+      "call_67ffd8fcef16a9d1c041420d629",
+      "call_76d6dedb664651e6af750752045",
+      "call_eb311bd68703c1cfd0944ec81fc",
+      "call_17fad32856011a0503324b365b8",
+      "call_14c7ce10b415ab72faaeed06eb5",
+      "call_d23d06cf1a48c4f11222d261e16",
+      "call_ffb00496665cb805e2182e168c0",
+      "call_2cf6c27604ca0904f2a3d2ec114",
+      "call_28e5c069e308007bd7debf58db9",
+      "call_ef00a0e63ca83ec9a8223dea59f",
+      "call_95b705ca52b33ecfe4a432b9150",
+      "call_b3429af5dcbd98ad2ec0f1486c7"
+    ]
+  },
+  {
+    "id": "305799",
+    "title": "Unlearn Product Experience",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "What did you like about the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically stood out to you?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "Were there any topics or skills missing from the course that you wish were covered?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically did you feel was missing?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "How was your experience with the mentors and instructors?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically about your experience stood out to you?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "Did you feel that the course adequately prepared you for a career in product management?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically about the course did you feel prepared you for a career in product management?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "What suggestions do you have for future cohorts to enhance the course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically would you suggest for future cohorts?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "How did you find the Unlearn Product Management course overall?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically about the course did you find enjoyable?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "Were there any challenges you faced during the course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically did you find challenging?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "What motivated you to enroll in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically about the course interested you?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "How did the course meet your expectations?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically about the course met your expectations?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "What additional feedback do you have about the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically about the course would you like to provide feedback on?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      },
+      {
+        "main_question": "Is there anything else you would like to share about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What specifically would you like to share about your experience?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you give me a more detailed answer?"
+      }
+    ],
+    "agent_id": "agent_82d4eacf3da6b14732e4401bcd"
+  },
+  {
+    "id": "274386",
+    "title": "Myntra",
+    "description": "I want to know why the return rates are increasing",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I want to know why the return rates are increasing",
+    "questions": [
+      {
+        "main_question": "What factors do you think are contributing to the increase in return rates?",
+        "if user gives generic answer": "Can you provide more specific examples or details?",
+        "probe if needed": "Can you think of any specific instances where you noticed a higher return rate?",
+        "probe if vague": "Can you elaborate on your answer?",
+        "probe gently if broad answer": "Could you give a more specific reason for the increase in return rates?"
+      },
+      {
+        "main_question": "In your experience, have you noticed any patterns or trends in the types of products that are being returned more frequently?",
+        "if user gives generic answer": "Can you provide some specific examples?",
+        "probe if needed": "Do you think certain product categories are more prone to higher return rates?",
+        "probe if vague": "Could you clarify what you mean by patterns and trends?",
+        "probe gently if broad answer": "Can you think of any specific products that have a higher return rate?"
+      },
+      {
+        "main_question": "How do you think the return process can be improved to reduce return rates?",
+        "if user gives generic answer": "Can you provide some specific suggestions?",
+        "probe if needed": "Do you have any ideas for streamlining the return process?",
+        "probe if vague": "Can you elaborate on your answer?",
+        "probe gently if broad answer": "Could you give a specific example of how the return process can be improved?"
+      },
+      {
+        "main_question": "Do you believe that customer satisfaction plays a role in return rates?",
+        "if user gives generic answer": "Can you provide some specific examples or situations?",
+        "probe if needed": "In what ways do you think customer satisfaction impacts return rates?",
+        "probe if vague": "Can you clarify what you mean by customer satisfaction?",
+        "probe gently if broad answer": "Do you think customer satisfaction is a major factor in return rates?"
+      },
+      {
+        "main_question": "Have you noticed any changes in customer expectations that may be contributing to the increase in return rates?",
+        "if user gives generic answer": "Can you provide some specific examples or situations?",
+        "probe if needed": "Do you think customer expectations have changed in recent years?",
+        "probe if vague": "Can you elaborate on your answer?",
+        "probe gently if broad answer": "Could you give a specific instance where you noticed a change in customer expectations?"
+      },
+      {
+        "main_question": "In your opinion, what can companies do to reduce return rates and improve customer satisfaction?",
+        "if user gives generic answer": "Can you provide some specific suggestions?",
+        "probe if needed": "Do you have any ideas for how companies can address both return rates and customer satisfaction?",
+        "probe if vague": "Could you clarify your answer?",
+        "probe gently if broad answer": "Can you think of any specific strategies that could help reduce return rates and improve customer satisfaction?"
+      },
+      {
+        "main_question": "Do you think the rise in e-commerce has had an impact on return rates?",
+        "if user gives generic answer": "Can you provide some specific examples or situations?",
+        "probe if needed": "In what ways do you think e-commerce has affected return rates?",
+        "probe if vague": "Can you clarify what you mean by e-commerce?",
+        "probe gently if broad answer": "Do you believe that the increase in online shopping has contributed to higher return rates?"
+      },
+      {
+        "main_question": "How do you think companies can better communicate product information to customers to reduce return rates?",
+        "if user gives generic answer": "Can you provide some specific suggestions?",
+        "probe if needed": "Do you have any ideas for how companies can improve their product information?",
+        "probe if vague": "Can you elaborate on your answer?",
+        "probe gently if broad answer": "Could you give a specific example of how companies could better communicate product information?"
+      },
+      {
+        "main_question": "Do you think the return process is a hassle for customers?",
+        "if user gives generic answer": "Can you provide some specific examples or situations?",
+        "probe if needed": "In what ways do you think the return process can be a hassle for customers?",
+        "probe if vague": "Can you clarify what you mean by hassle?",
+        "probe gently if broad answer": "Do you believe that the return process can be a frustrating experience for customers?"
+      }
+    ],
+    "agent_id": "agent_747965abbdeba2c83a4d4e83e1"
+  },
+  {
+    "id": "117648",
+    "title": "Myntra",
+    "description": "I'm conducting a user research where I want to know why return rates are increasing. The study aims to gather feedback. I'll be sending this surveys to users who have returned an order recently",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I'm conducting a user research where I want to know why return rates are increasing. The study aims to gather feedback. I'll be sending this surveys to users who have returned an order recently",
+    "questions": [
+      {
+        "main_question": "Can you tell me why you returned your order?",
+        "probe if vague": "What specifically about the order made you want to return it?",
+        "if user gives generic answer": "Can you provide more details about the issue with your order?",
+        "probe if needed": "Is there any other reason why you decided to return your order?",
+        "probe gently if broad answer": "Could you give me a specific example of what made you want to return your order?"
+      },
+      {
+        "main_question": "How often do you typically return orders?",
+        "probe if vague": "Could you give me a rough estimate of how many orders you've returned in the past year?",
+        "if user gives generic answer": "Can you provide more information on why you tend to return orders?",
+        "probe if needed": "Is there a specific type of product that you tend to return more often?",
+        "probe gently if broad answer": "What factors influence your decision to return an order?"
+      },
+      {
+        "main_question": "What was your overall experience with the return process?",
+        "probe if vague": "Can you tell me more about your experience with the return process?",
+        "if user gives generic answer": "What aspects of the return process did you find challenging?",
+        "probe if needed": "Were there any issues or complications you encountered during the return process?",
+        "probe gently if broad answer": "Can you walk me through the steps you took to return your order?"
+      },
+      {
+        "main_question": "What improvements would you suggest for our return process?",
+        "probe if vague": "Can you provide some specific ways we can improve our return process?",
+        "if user gives generic answer": "What aspects of the return process do you think could be better?",
+        "probe if needed": "Is there any particular feature or aspect of the return process that you think needs improvement?",
+        "probe gently if broad answer": "How do you think we can make the return process more convenient for our customers?"
+      },
+      {
+        "main_question": "How would you rate your overall satisfaction with our product?",
+        "probe if vague": "Can you tell me more about your satisfaction with our product?",
+        "if user gives generic answer": "What specifically about our product do you think needs improvement?",
+        "probe if needed": "Is there any feature or aspect of our product that you were dissatisfied with?",
+        "probe gently if broad answer": "Could you give me an example of when our product did not meet your expectations?"
+      },
+      {
+        "main_question": "Do you feel that the product met your expectations?",
+        "probe if vague": "What were your expectations for the product?",
+        "if user gives generic answer": "What factors influenced your expectations for the product?",
+        "probe if needed": "Were there any specific features or aspects of the product that you were expecting?",
+        "probe gently if broad answer": "In what ways did the product meet or not meet your expectations?"
+      },
+      {
+        "main_question": "What factors influenced your decision to return your order?",
+        "probe if vague": "Could you expand on the factors that led to your decision to return your order?",
+        "if user gives generic answer": "What specifically about the product or purchase experience influenced your decision?",
+        "probe if needed": "Were there any external factors that influenced your decision to return the order?",
+        "probe gently if broad answer": "How did these factors contribute to your overall experience with our product?"
+      },
+      {
+        "main_question": "How would you rate your experience with our customer service during the return process?",
+        "probe if vague": "Can you provide more details about your experience with our customer service?",
+        "if user gives generic answer": "What specifically about our customer service did you find satisfactory or unsatisfactory?",
+        "probe if needed": "Were there any issues or concerns you had with our customer service?",
+        "probe gently if broad answer": "How did our customer service impact your overall experience with the return process?"
+      },
+      {
+        "main_question": "Have you had any positive experiences with our product or brand?",
+        "probe if vague": "Could you share an example of a positive experience you've had with our product or brand?",
+        "if user gives generic answer": "What specific aspects of the product or brand have you been satisfied with?",
+        "probe if needed": "Are there any features or aspects of our product that you particularly appreciate?",
+        "probe gently if broad answer": "In what ways have you been positively impacted by our product or brand?"
+      }
+    ],
+    "agent_id": "agent_90e4b09e74c289620fdaf63bbf",
+    "calls": [
+      "call_c07b9892d98490ca857cf3048c2",
+      "call_353c1cfdfe5df47df9212a60933",
+      "call_9bb4619abdc6eef58bfe1205551",
+      "call_a06b0e0427a2c1ba39eafc8e497"
+    ]
+  },
+  {
+    "id": "104331",
+    "title": "Flipkart",
+    "description": "I'm conducting a user research, where I'm taking feedback of my customers on their experience on our platform. I want to know where we can improve.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I'm conducting a user research, where I'm taking feedback of my customers on their experience on our platform. I want to know where we can improve.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience using our platform?",
+        "if user gives generic answer": "Could you provide more specific details about your experience?",
+        "probe if needed": "Can you give an example of a specific instance where you felt our platform could be improved?",
+        "probe if vague": "Can you elaborate on what aspects of our platform you feel could be improved?",
+        "probe gently if broad answer": "Could you narrow down your answer to a specific feature or function of our platform?"
+      },
+      {
+        "main_question": "What do you think could be done to enhance your overall experience on our platform?",
+        "if user gives generic answer": "Could you provide more specific suggestions for improvement?",
+        "probe if needed": "Do you have any specific ideas or recommendations for how we can improve our platform?",
+        "probe if vague": "Can you provide more details on what aspects of our platform you believe could be enhanced?",
+        "probe gently if broad answer": "Is there a particular area of our platform that you feel could be improved?"
+      },
+      {
+        "main_question": "How would you rate the user-friendliness of our platform?",
+        "if user gives generic answer": "Could you elaborate on what makes our platform user-friendly or not?",
+        "probe if needed": "In your opinion, what aspects of our platform contribute to its user-friendliness?",
+        "probe if vague": "What specific features or functions of our platform do you find user-friendly or not?",
+        "probe gently if broad answer": "Can you provide more specific details on what makes our platform user-friendly or not?"
+      },
+      {
+        "main_question": "What do you think sets our platform apart from others in the market?",
+        "if user gives generic answer": "Could you provide more specific examples of what makes our platform unique?",
+        "probe if needed": "In your opinion, what are some key differentiators between our platform and others in the market?",
+        "probe if vague": "Can you elaborate on what aspects of our platform you feel make it stand out from others?",
+        "probe gently if broad answer": "Can you provide more details on what sets our platform apart from others in the market?"
+      },
+      {
+        "main_question": "How satisfied are you with the overall performance of our platform?",
+        "if user gives generic answer": "Could you provide more specific details on what aspects of our platform you are satisfied or dissatisfied with?",
+        "probe if needed": "In your opinion, what contributes to your satisfaction or dissatisfaction with our platform?",
+        "probe if vague": "Can you elaborate on what specifically you are satisfied or dissatisfied with on our platform?",
+        "probe gently if broad answer": "Could you narrow down your answer to a specific aspect of our platform?"
+      },
+      {
+        "main_question": "What suggestions do you have for improving the user interface of our platform?",
+        "if user gives generic answer": "Could you provide more specific recommendations for improving our platform's user interface?",
+        "probe if needed": "Do you have any specific ideas for how we could enhance the user interface of our platform?",
+        "probe if vague": "Can you provide more details on what aspects of our platform's user interface you believe could be improved?",
+        "probe gently if broad answer": "Is there a particular aspect of our platform's user interface that you feel could be enhanced?"
+      },
+      {
+        "main_question": "How easy was it for you to navigate through our platform?",
+        "if user gives generic answer": "Could you provide more specific details on what aspects of our platform you found easy or difficult to navigate?",
+        "probe if needed": "In your opinion, what contributed to the ease or difficulty of navigating our platform?",
+        "probe if vague": "Can you elaborate on what specifically you found easy or difficult to navigate on our platform?",
+        "probe gently if broad answer": "Could you narrow down your answer to a specific feature or function of our platform that you found easy or difficult to navigate?"
+      },
+      {
+        "main_question": "What do you think could be done to improve the overall performance of our platform?",
+        "if user gives generic answer": "Could you provide more specific suggestions for improving our platform's performance?",
+        "probe if needed": "Do you have any specific ideas for how we could enhance the performance of our platform?",
+        "probe if vague": "Can you provide more details on what aspects of our platform's performance you believe could be improved?",
+        "probe gently if broad answer": "Is there a particular aspect of our platform's performance that you feel could be enhanced?"
+      }
+    ]
+  },
+  {
+    "id": "480542",
+    "title": "Flipkart ",
+    "description": "I am conducting a user research where I want to gather information on my user's experience.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I am conducting a user research where I want to gather information on my user's experience.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience using our product?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you give me more details?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific aspect of your experience?"
+      },
+      {
+        "main_question": "What do you think are the strengths of our product?",
+        "if user gives generic answer": "Can you give me specific examples that demonstrate these strengths?",
+        "probe if needed": "Can you provide more context for your answer?",
+        "probe if vague": "Can you provide more details about the strengths you mentioned?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific strength?"
+      },
+      {
+        "main_question": "How would you rate your overall satisfaction with our product?",
+        "if user gives generic answer": "Can you explain why you gave that rating?",
+        "probe if needed": "What factors influenced your satisfaction with our product?",
+        "probe if vague": "Can you provide more details about your satisfaction?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific aspect of your satisfaction?"
+      },
+      {
+        "main_question": "What improvements would you suggest for our product?",
+        "if user gives generic answer": "Can you provide specific areas that you think need improvement?",
+        "probe if needed": "Can you elaborate on your suggestions?",
+        "probe if vague": "Can you provide more details about your suggestions?",
+        "probe gently if broad answer": "Can you narrow down your suggestions to a specific aspect?"
+      },
+      {
+        "main_question": "How often do you use our product?",
+        "if user gives generic answer": "Can you specify a frequency?",
+        "probe if needed": "What factors influence how often you use our product?",
+        "probe if vague": "Can you provide more details about your usage frequency?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific time period?"
+      },
+      {
+        "main_question": "What do you like most about our product?",
+        "if user gives generic answer": "Can you give me specific examples of what you like?",
+        "probe if needed": "Can you elaborate on why you like these aspects?",
+        "probe if vague": "Can you provide more details about what you like?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific aspect?"
+      },
+      {
+        "main_question": "What challenges have you faced while using our product?",
+        "if user gives generic answer": "Can you give me specific examples of these challenges?",
+        "probe if needed": "Can you elaborate on how these challenges affected your experience?",
+        "probe if vague": "Can you provide more details about the challenges you faced?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific challenge?"
+      },
+      {
+        "main_question": "How would you describe the user interface of our product?",
+        "if user gives generic answer": "Can you provide specific examples of what you like or dislike about the user interface?",
+        "probe if needed": "Can you elaborate on your answer?",
+        "probe if vague": "Can you provide more details about the user interface?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific aspect of the user interface?"
+      },
+      {
+        "main_question": "What motivated you to try our product?",
+        "if user gives generic answer": "Can you provide specific reasons for your motivation?",
+        "probe if needed": "Can you elaborate on your answer?",
+        "probe if vague": "Can you provide more details about your motivation?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific aspect of your motivation?"
+      },
+      {
+        "main_question": "How likely are you to recommend our product to others?",
+        "if user gives generic answer": "Can you explain why you gave that rating?",
+        "probe if needed": "What factors influence your likelihood to recommend our product?",
+        "probe if vague": "Can you provide more details about your likelihood to recommend?",
+        "probe gently if broad answer": "Can you narrow down your answer to a specific aspect?"
+      }
+    ]
+  },
+  {
+    "id": "171482",
+    "title": "Flipkart",
+    "description": "I'm conducting user research where I want to gather information on my user's experience on my platform.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I'm conducting user research where I want to gather information on my user's experience on my platform.",
+    "questions": [
+      {
+        "main_question": "What features do you find most useful on our platform?",
+        "if user gives generic answer": "Can you give me an example of how you use that feature?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you give me a specific scenario where you found that feature helpful?"
+      },
+      {
+        "main_question": "How often do you use our platform?",
+        "if user gives generic answer": "Can you tell me what motivates you to use our platform?",
+        "probe if needed": "Can you provide more specific details about your usage?",
+        "probe if vague": "Can you give me a specific number or estimate?",
+        "probe gently if broad answer": "Can you tell me about your experience using our platform in the past month?"
+      },
+      {
+        "main_question": "What are some pain points you experience while using our platform?",
+        "if user gives generic answer": "Can you give me a specific example of a pain point you encountered?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you tell me about a time when you encountered a particularly frustrating issue on our platform?"
+      },
+      {
+        "main_question": "What do you think sets our platform apart from others in the market?",
+        "if user gives generic answer": "Can you give me an example of a feature or service that you think makes our platform unique?",
+        "probe if needed": "Can you elaborate on why you think that feature is unique?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you tell me about a memorable experience you've had on our platform that sets it apart from others?"
+      },
+      {
+        "main_question": "How would you rate your overall experience with our platform?",
+        "if user gives generic answer": "Can you tell me what led you to give that rating?",
+        "probe if needed": "Can you provide more specific details about your experience?",
+        "probe if vague": "Can you give me a specific number or estimate?",
+        "probe gently if broad answer": "Can you tell me about a recent experience that influenced your rating?"
+      },
+      {
+        "main_question": "What improvements would you like to see on our platform?",
+        "if user gives generic answer": "Can you give me a specific example of an improvement you would like to see?",
+        "probe if needed": "Can you elaborate on why you think that improvement is necessary?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you tell me about a time when you encountered a feature or service that you thought could be improved?"
+      },
+      {
+        "main_question": "How do you navigate through our platform?",
+        "if user gives generic answer": "Can you give me a specific example of how you navigate to find what you're looking for?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you tell me about a time when you had trouble finding something on our platform?"
+      },
+      {
+        "main_question": "What do you enjoy most about using our platform?",
+        "if user gives generic answer": "Can you give me an example of a feature or service that you find enjoyable?",
+        "probe if needed": "Can you elaborate on why you find that feature enjoyable?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you tell me about a particular experience you had on our platform that you found enjoyable?"
+      },
+      {
+        "main_question": "What do you think could be done to make our platform more user-friendly?",
+        "if user gives generic answer": "Can you give me a specific example of something that could be changed to make the platform more user-friendly?",
+        "probe if needed": "Can you elaborate on why you think that change would improve the user experience?",
+        "probe if vague": "Can you provide more specific details?",
+        "probe gently if broad answer": "Can you tell me about a time when you found the platform difficult to navigate or use?"
+      }
+    ],
+    "agent_id": "agent_c55358c4e3363d2b4be9555c07",
+    "calls": []
+  },
+  {
+    "id": "280247",
+    "title": "Surview Name",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples or details?",
+        "probe if needed": "Can you elaborate on that?",
+        "probe if vague": "Can you clarify what you mean by that?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "What aspects of the course did you particularly enjoy?",
+        "if user gives generic answer": "Could you give some specific examples or scenarios?",
+        "probe if needed": "Can you expand on that?",
+        "probe if vague": "Can you provide more clarity on what you liked?",
+        "probe gently if broad answer": "Can you narrow down your response?"
+      },
+      {
+        "main_question": "Were there any topics or skills that you felt were missing from the course?",
+        "if user gives generic answer": "Could you provide some specific topics or skills that you felt were missing?",
+        "probe if needed": "Can you elaborate on why you felt they were missing?",
+        "probe if vague": "Can you clarify what you mean by missing?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "How would you rate your experience with the mentors and instructors in the course?",
+        "if user gives generic answer": "Can you provide some specific examples or scenarios?",
+        "probe if needed": "Can you expand on that?",
+        "probe if vague": "Can you provide more clarity on your experience?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "What improvements or enhancements would you suggest for future cohorts of the course?",
+        "if user gives generic answer": "Could you provide some specific suggestions?",
+        "probe if needed": "Can you elaborate on why you suggest those improvements?",
+        "probe if vague": "Can you clarify what you mean by improvements?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "In your opinion, what were the strengths of the course?",
+        "if user gives generic answer": "Can you provide some specific examples or scenarios?",
+        "probe if needed": "Can you expand on that?",
+        "probe if vague": "Can you provide more clarity on the strengths?",
+        "probe gently if broad answer": "Can you narrow down your response?"
+      },
+      {
+        "main_question": "Were there any aspects of the course that you felt could be improved?",
+        "if user gives generic answer": "Could you provide some specific examples or suggestions?",
+        "probe if needed": "Can you elaborate on why you feel they could be improved?",
+        "probe if vague": "Can you clarify what you mean by improvements?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "How would you rate the overall organization and structure of the course?",
+        "if user gives generic answer": "Can you provide some specific examples or scenarios?",
+        "probe if needed": "Can you expand on that?",
+        "probe if vague": "Can you provide more clarity on your rating?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "Did you feel that the course adequately covered all the necessary topics and skills?",
+        "if user gives generic answer": "Could you provide some specific examples or scenarios?",
+        "probe if needed": "Can you elaborate on why you felt this way?",
+        "probe if vague": "Can you clarify what you mean by 'adequately covered'?",
+        "probe gently if broad answer": "Can you give a more focused response?"
+      },
+      {
+        "main_question": "What was your biggest takeaway from the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide some specific examples or scenarios?",
+        "probe if needed": "Can you expand on that?",
+        "probe if vague": "Can you provide more clarity on your takeaway?",
+        "probe gently if broad answer": "Can you narrow down your response?"
+      }
+    ],
+    "agent_id": "agent_2cfe057ea88d097ad8e5a42d3e",
+    "calls": []
+  },
+  {
+    "id": "156172",
+    "title": "Flipkart",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples of your experience?",
+        "probe if needed": "What were some of the highlights of the course for you?",
+        "probe if vague": "Can you tell me more about what you liked or didn't like?",
+        "probe gently if broad answer": "Can you give me a specific example of a topic or skill you found valuable?"
+      },
+      {
+        "main_question": "What topics or skills do you feel were missing from the course?",
+        "if user gives generic answer": "Can you provide more specific examples of any missing topics or skills?",
+        "probe if needed": "What specific areas do you feel could have been covered in more depth?",
+        "probe if vague": "Can you expand on what you feel was missing?",
+        "probe gently if broad answer": "Were there any specific skills or topics you were hoping to learn but weren't covered?"
+      },
+      {
+        "main_question": "How was your experience with the mentors and instructors in the course?",
+        "if user gives generic answer": "Can you provide more specific examples of your experience?",
+        "probe if needed": "What did you find most helpful about the mentors and instructors?",
+        "probe if vague": "Can you tell me more about your interactions with the mentors and instructors?",
+        "probe gently if broad answer": "Were there any particular mentors or instructors that stood out to you?"
+      },
+      {
+        "main_question": "What did you like about the Unlearn Product Management course overall?",
+        "if user gives generic answer": "Can you provide more specific examples of what you liked?",
+        "probe if needed": "What specifically did you find valuable about the course?",
+        "probe if vague": "Can you expand on what you enjoyed about the course?",
+        "probe gently if broad answer": "Were there any particular aspects or features of the course that you found beneficial?"
+      },
+      {
+        "main_question": "Was there anything you didn't like about the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples of what you didn't like?",
+        "probe if needed": "What specific areas do you feel could be improved upon?",
+        "probe if vague": "Can you expand on what you didn't like?",
+        "probe gently if broad answer": "Were there any aspects or features of the course that you found less valuable?"
+      },
+      {
+        "main_question": "What was your favorite part of the course?",
+        "if user gives generic answer": "Can you provide more specific examples of what you enjoyed?",
+        "probe if needed": "What specifically did you find most enjoyable?",
+        "probe if vague": "Can you tell me more about what you liked?",
+        "probe gently if broad answer": "Were there any particular activities or topics that stood out to you?"
+      },
+      {
+        "main_question": "What was your least favorite part of the course?",
+        "if user gives generic answer": "Can you provide more specific examples of what you didn't enjoy?",
+        "probe if needed": "What specific areas do you feel could be improved upon?",
+        "probe if vague": "Can you expand on what you didn't like?",
+        "probe gently if broad answer": "Were there any activities or topics that you found less engaging?"
+      },
+      {
+        "main_question": "Were there any areas of the course that you found particularly challenging?",
+        "if user gives generic answer": "Can you provide more specific examples of what you found challenging?",
+        "probe if needed": "What specifically did you find difficult?",
+        "probe if vague": "Can you expand on what you found challenging?",
+        "probe gently if broad answer": "Were there any topics or skills that you struggled with?"
+      },
+      {
+        "main_question": "Do you have any suggestions for how the course could be improved for future cohorts?",
+        "if user gives generic answer": "Can you provide more specific examples of your suggestions?",
+        "probe if needed": "What specific changes or enhancements would you recommend?",
+        "probe if vague": "Can you expand on your suggestions?",
+        "probe gently if broad answer": "Were there any specific areas or aspects of the course that you feel could be improved?"
+      }
+    ],
+    "agent_id": "agent_d81e571750e8ffe372134988e5",
+    "calls": []
+  },
+  {
+    "id": "208966",
+    "title": "Unlearn Product Experience",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific details?",
+        "probe if needed": "What could be improved in the course?",
+        "probe if vague": "Can you clarify your response?",
+        "probe gently if broad answer": "Can you provide a specific example of a positive experience?"
+      },
+      {
+        "main_question": "What did you like about the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you elaborate on that?",
+        "probe if needed": "Were there any specific topics or skills that stood out to you?",
+        "probe if vague": "Could you provide more detail?",
+        "probe gently if broad answer": "Can you give an example of something you found particularly helpful?"
+      },
+      {
+        "main_question": "Were there any missing topics or skills in the Unlearn Product Management course that you wished were covered?",
+        "if user gives generic answer": "What specific topics or skills did you feel were missing?",
+        "probe if needed": "How do you think the course could have been improved?",
+        "probe if vague": "Could you provide more specific examples?",
+        "probe gently if broad answer": "What impact do you think these missing topics or skills had on your overall experience?"
+      },
+      {
+        "main_question": "Can you tell me about your experience with mentors and instructors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific details?",
+        "probe if needed": "Were there any mentors or instructors that stood out to you?",
+        "probe if vague": "Can you clarify your response?",
+        "probe gently if broad answer": "Can you provide a specific example of a positive experience with a mentor or instructor?"
+      },
+      {
+        "main_question": "What enhancements do you think could be made for future cohorts in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific suggestions?",
+        "probe if needed": "Were there any specific areas that you think could be improved?",
+        "probe if vague": "Can you clarify your response?",
+        "probe gently if broad answer": "Can you give an example of something that you think would enhance the course for future cohorts?"
+      },
+      {
+        "main_question": "What was your overall impression of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you elaborate on that?",
+        "probe if needed": "Were there any specific moments or experiences that shaped your overall impression?",
+        "probe if vague": "Can you provide more detail?",
+        "probe gently if broad answer": "Can you give an example of something that greatly impacted your overall impression?"
+      },
+      {
+        "main_question": "In your opinion, what were the strongest aspects of the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "Were there any standout moments or skills that contributed to these strong aspects?",
+        "probe if vague": "Could you provide more detail?",
+        "probe gently if broad answer": "Can you give an example of a particularly strong aspect of the course for you?"
+      },
+      {
+        "main_question": "What were the weakest aspects of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific examples?",
+        "probe if needed": "How do you think these weak aspects could be improved?",
+        "probe if vague": "Can you clarify your response?",
+        "probe gently if broad answer": "Can you provide an example of a weak aspect that had a negative impact on your experience?"
+      },
+      {
+        "main_question": "How would you rate your overall satisfaction with the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific details?",
+        "probe if needed": "Were there any specific moments or experiences that influenced your overall satisfaction?",
+        "probe if vague": "Could you elaborate on your response?",
+        "probe gently if broad answer": "Can you give an example of something that greatly influenced your overall satisfaction?"
+      },
+      {
+        "main_question": "Is there anything else you would like to share about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more specific details?",
+        "probe if needed": "Is there anything specific you would like to highlight?",
+        "probe if vague": "Could you clarify your response?",
+        "probe gently if broad answer": "Can you provide a specific example of something you would like to share?"
+      }
+    ],
+    "agent_id": "agent_a615282b1d0632288f4c950817"
+  },
+  {
+    "id": "644962",
+    "title": "Surview Name",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "What specifically did you like about the course?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of your experience with the course?"
+      },
+      {
+        "main_question": "Were there any topics or skills that you felt were missing from the course?",
+        "if user gives generic answer": "Can you elaborate on those missing topics or skills?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more specific examples?",
+        "probe gently if broad answer": "How did the absence of these topics or skills impact your overall experience in the course?"
+      },
+      {
+        "main_question": "How would you rate your experience with the mentors and instructors in the course?",
+        "if user gives generic answer": "What specifically did you like about the mentors and instructors?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more details about your interactions with the mentors and instructors?",
+        "probe gently if broad answer": "What stood out to you about the mentors and instructors?"
+      },
+      {
+        "main_question": "Did you have any suggestions for improvements or enhancements for future cohorts?",
+        "if user gives generic answer": "Can you provide more specific suggestions?",
+        "probe if needed": "",
+        "probe if vague": "Can you elaborate on your ideas?",
+        "probe gently if broad answer": "What changes would you like to see in future cohorts?"
+      },
+      {
+        "main_question": "How did the Unlearn Product Management course compare to your expectations?",
+        "if user gives generic answer": "What specifically exceeded or fell short of your expectations?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more details about your expectations and how they were met or not met?",
+        "probe gently if broad answer": "What factors influenced your expectations?"
+      },
+      {
+        "main_question": "How did the course impact your understanding of product management?",
+        "if user gives generic answer": "What specific aspects of product management did the course impact for you?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more details about the impact of the course on your understanding?",
+        "probe gently if broad answer": "In what ways did the course change your perspective on product management?"
+      },
+      {
+        "main_question": "Can you share any memorable moments or experiences from the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you provide more specific examples?",
+        "probe if needed": "What made those moments or experiences memorable for you?",
+        "probe if vague": "",
+        "probe gently if broad answer": "What stood out to you about those moments or experiences?"
+      },
+      {
+        "main_question": "Did you have any challenges or difficulties during the course?",
+        "if user gives generic answer": "Can you elaborate on those challenges or difficulties?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more specific examples?",
+        "probe gently if broad answer": "How did you overcome those challenges or difficulties?"
+      },
+      {
+        "main_question": "Did you feel like the course met your expectations in terms of improving your skills and knowledge in product management?",
+        "if user gives generic answer": "What specific skills or knowledge did you feel were improved?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more details about the areas where you saw improvement?",
+        "probe gently if broad answer": "In what ways did you notice growth in your skills and knowledge?"
+      },
+      {
+        "main_question": "Do you have any additional comments or feedback about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you elaborate on your comments or feedback?",
+        "probe if needed": "",
+        "probe if vague": "Can you provide more specific examples?",
+        "probe gently if broad answer": "What stood out to you the most about the course?"
+      }
+    ],
+    "agent_id": "agent_5ed855301c3428d9543e2ebaae",
+    "calls": []
+  },
+  {
+    "id": "106651",
+    "title": "Surview Name II",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you be more specific?",
+        "probe if needed": "What specifically did you like about the course?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of something you enjoyed in the course?"
+      },
+      {
+        "main_question": "Were there any topics or skills that you felt were missing in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you elaborate on what was missing?",
+        "probe if needed": "What topics or skills do you wish were covered?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of something you wished was covered?"
+      },
+      {
+        "main_question": "How was your experience with the mentors and instructors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you be more specific?",
+        "probe if needed": "What specifically did you like about the mentors and instructors?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of a positive interaction with a mentor or instructor?"
+      },
+      {
+        "main_question": "Did you have any areas of improvement for the mentors and instructors in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you elaborate on areas for improvement?",
+        "probe if needed": "What specific areas did you feel could be improved?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Could you give an example of an area where you feel the mentors and instructors could have improved?"
+      },
+      {
+        "main_question": "In your opinion, what were the strengths of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you give more detail about the strengths?",
+        "probe if needed": "What specific strengths did you notice?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of a strength of the course?"
+      },
+      {
+        "main_question": "Were there any weaknesses or areas for improvement in the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you elaborate on the weaknesses?",
+        "probe if needed": "What specific weaknesses did you notice?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of an area where you feel the course could be improved?"
+      },
+      {
+        "main_question": "How did you find the overall structure and organization of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide more detail about the structure and organization?",
+        "probe if needed": "What specific aspects of the structure and organization did you like?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of something you found well-structured in the course?"
+      },
+      {
+        "main_question": "Were there any areas of the Unlearn Product Management course that you felt were not well-structured or organized?",
+        "if user gives generic answer": "Could you elaborate on what areas you found to be not well-structured?",
+        "probe if needed": "What specific aspects of the structure or organization could have been improved?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of an area where you felt the course was not well-structured?"
+      },
+      {
+        "main_question": "How did the Unlearn Product Management course meet your expectations?",
+        "if user gives generic answer": "Could you provide more detail about your expectations?",
+        "probe if needed": "What specific expectations did you have before starting the course?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you give an example of an expectation that was met by the course?"
+      }
+    ],
+    "agent_id": "agent_d751a132521fc67e7c5f8c69fa"
+  },
+  {
+    "id": "293645",
+    "title": "Unlearn Product Experience",
+    "description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I\u2019m conducting a study to explore participants' experiences in the Unlearn Product Management course, focusing on areas for improvement. The study aims to gather feedback on what participants liked, any missing topics or skills they wished were covered, and their experience with mentors and instructors. The goal is to identify enhancements for future cohorts.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your overall experience in the Unlearn Product Management course?",
+        "if user gives generic answer": "What specific aspects of the course stood out to you?",
+        "probe if needed": "Can you provide any specific examples?",
+        "probe if vague": "Could you elaborate on that?",
+        "probe gently if broad answer": "Can you narrow down your response to a specific aspect of the course?"
+      },
+      {
+        "main_question": "What topics or skills do you feel were missing from the course?",
+        "if user gives generic answer": "Can you give me some specific examples of topics or skills that you were hoping to see covered?",
+        "probe if needed": "Were there any specific gaps in your knowledge or skills that you were hoping the course would address?",
+        "probe if vague": "Could you provide more details on what you felt was missing?",
+        "probe gently if broad answer": "Could you narrow down your response to one or two specific topics or skills?"
+      },
+      {
+        "main_question": "How would you rate your experience with the mentors and instructors during the course?",
+        "if user gives generic answer": "What specifically did you appreciate about their mentorship/instruction?",
+        "probe if needed": "Were there any mentors or instructors that stood out to you in a positive or negative way?",
+        "probe if vague": "Could you provide more details on your experience with the mentors and instructors?",
+        "probe gently if broad answer": "Can you narrow down your response to a specific mentor or instructor?"
+      },
+      {
+        "main_question": "What did you like the most about the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide any specific examples of what you liked?",
+        "probe if needed": "Were there any particular activities or lessons that you found most enjoyable?",
+        "probe if vague": "Can you elaborate on what you liked about the course?",
+        "probe gently if broad answer": "Could you narrow down your response to one or two specific aspects of the course?"
+      },
+      {
+        "main_question": "In your opinion, what can be improved in future cohorts of the Unlearn Product Management course?",
+        "if user gives generic answer": "Could you provide any specific suggestions for improvement?",
+        "probe if needed": "Were there any aspects of the course that you found particularly challenging or confusing?",
+        "probe if vague": "Can you elaborate on what you feel could be improved?",
+        "probe gently if broad answer": "Could you narrow down your response to one or two specific areas for improvement?"
+      },
+      {
+        "main_question": "How did the Unlearn Product Management course compare to your expectations?",
+        "if user gives generic answer": "In what ways did the course meet or exceed your expectations?",
+        "probe if needed": "Were there any specific aspects of the course that did not meet your expectations?",
+        "probe if vague": "Can you elaborate on your expectations and how the course compared?",
+        "probe gently if broad answer": "Could you narrow down your response to one or two specific aspects of the course?"
+      },
+      {
+        "main_question": "Did you feel supported throughout the Unlearn Product Management course?",
+        "if user gives generic answer": "What specific support did you appreciate?",
+        "probe if needed": "Were there any times when you felt you didn't have enough support?",
+        "probe if vague": "Could you provide more details on the support you received?",
+        "probe gently if broad answer": "Can you narrow down your response to a specific aspect of support?"
+      },
+      {
+        "main_question": "How did the Unlearn Product Management course impact your skills and knowledge in product management?",
+        "if user gives generic answer": "Could you provide any specific examples of skills or knowledge that you gained?",
+        "probe if needed": "Were there any particular skills or knowledge areas that you feel you improved in?",
+        "probe if vague": "Can you elaborate on the impact the course had on your skills and knowledge?",
+        "probe gently if broad answer": "Could you narrow down your response to one or two specific skills or knowledge areas?"
+      },
+      {
+        "main_question": "Were there any challenges or obstacles you faced during the Unlearn Product Management course?",
+        "if user gives generic answer": "Can you tell me more about those challenges?",
+        "probe if needed": "Were there any specific times when you felt particularly challenged?",
+        "probe if vague": "Could you provide more details on the challenges you faced?",
+        "probe gently if broad answer": "Can you narrow down your response to one or two specific challenges?"
+      }
+    ],
+    "agent_id": "agent_6a35436c777054690f8cd274bf"
+  },
+  {
+    "id": "242786",
+    "title": "Myntra",
+    "description": "I want to know why there are more return rates",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I want to know why there are more return rates",
+    "questions": [
+      {
+        "main_question": "Can you tell me more about your experience with our product?",
+        "if user gives generic answer": "Can you provide more specific details?",
+        "probe if needed": "What specifically stood out to you about your experience?",
+        "probe if vague": "Can you give me an example of a specific situation that occurred?",
+        "probe gently if broad answer": "Can you expand on your answer and provide more context?"
+      },
+      {
+        "main_question": "What do you think could be the reason for the higher return rates?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Have you noticed any patterns or trends in the return rates?",
+        "probe if vague": "Can you elaborate on what you mean by 'higher'?",
+        "probe gently if broad answer": "Can you give me an example of a specific return rate that you've noticed?"
+      },
+      {
+        "main_question": "How do you feel about the overall user experience of our product?",
+        "if user gives generic answer": "Can you provide more specific details?",
+        "probe if needed": "Is there anything in particular that you feel could be improved?",
+        "probe if vague": "Can you give me an example of a specific experience you had with our product?",
+        "probe gently if broad answer": "Can you provide more context for your answer?"
+      },
+      {
+        "main_question": "What do you think are the strengths of our product?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Are there any specific features or aspects that you think stand out?",
+        "probe if vague": "Can you give me a specific example of a strength you've noticed?",
+        "probe gently if broad answer": "Can you expand on your answer and provide more context?"
+      },
+      {
+        "main_question": "In your opinion, what could be improved in our product?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Are there any particular areas or features that you think could be improved?",
+        "probe if vague": "Can you give me a specific example of something you think could be improved?",
+        "probe gently if broad answer": "Can you expand on your answer and provide more context?"
+      },
+      {
+        "main_question": "How would you describe the usability of our product?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Are there any specific tasks or actions that you find particularly easy or difficult?",
+        "probe if vague": "Can you give me a specific example of an aspect of usability that you've noticed?",
+        "probe gently if broad answer": "Can you expand on your answer and provide more context?"
+      },
+      {
+        "main_question": "What do you think sets our product apart from others in the market?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Are there any specific features or aspects that you think give our product a competitive edge?",
+        "probe if vague": "Can you give me a specific example of something that sets our product apart?",
+        "probe gently if broad answer": "Can you expand on your answer and provide more context?"
+      },
+      {
+        "main_question": "How likely are you to recommend our product to others?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Is there anything specific that would make you more likely to recommend our product?",
+        "probe if vague": "Can you give me a specific example of a time when you recommended our product?",
+        "probe gently if broad answer": "Can you expand on your answer and provide more context?"
+      },
+      {
+        "main_question": "What do you think could be the reason for the low usage of certain features in our product?",
+        "if user gives generic answer": "Can you provide more specific details or examples?",
+        "probe if needed": "Have you noticed any patterns or trends in the low usage of certain features?",
+        "probe if vague": "Can you elaborate on what you mean by 'low'?",
+        "probe gently if broad answer": "Can you give me an example of a specific feature with low usage that you've noticed?"
+      }
+    ],
+    "agent_id": "agent_fbc9e58f0dc891a98541621e96"
+  },
+  {
+    "id": "153803",
+    "title": "Flipkart",
+    "description": "I'm conducting a survey to understand buyer behaviour for electronics, specific to understanding recent competitors like Zepto and BlinkIt's \"10-minute delivery\" model. Core priorities are to understand the price parity, fulfilment speed, variety, design and serviceability.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I'm conducting a survey to understand buyer behaviour for electronics, specific to understanding recent competitors like Zepto and BlinkIt's \"10-minute delivery\" model. Core priorities are to understand the price parity, fulfilment speed, variety, design and serviceability.",
+    "questions": [
+      {
+        "main_question": "Can you tell me about your recent experience with purchasing electronics?",
+        "if user gives generic answer": "What specifically did you purchase?",
+        "probe if needed": "What made you choose that specific product?",
+        "probe if vague": "Can you provide more details about your experience?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "Have you heard of the new '10-minute delivery' model offered by Zepto and BlinkIt?",
+        "if user gives generic answer": "What do you know about it?",
+        "probe if needed": "Have you personally used this service?",
+        "probe if vague": "Can you provide more details about your knowledge on this topic?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "How important is price parity to you when making a purchase decision for electronics?",
+        "if user gives generic answer": "What factors do you consider when assessing price parity?",
+        "probe if needed": "Have you noticed any differences in prices between Zepto, BlinkIt, and other competitors?",
+        "probe if vague": "Can you provide more details about your thoughts on price parity?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "What role does fulfilment speed play in your decision to purchase electronics?",
+        "if user gives generic answer": "Can you give an example of a time when you prioritized fulfilment speed?",
+        "probe if needed": "Have you ever encountered any issues with fulfilment speed when buying from Zepto or BlinkIt?",
+        "probe if vague": "Can you provide more details about your thoughts on fulfilment speed?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "How important is variety when choosing where to purchase electronics?",
+        "if user gives generic answer": "What specific factors do you consider when assessing variety?",
+        "probe if needed": "Have you ever had trouble finding a specific product on Zepto or BlinkIt?",
+        "probe if vague": "Can you provide more details about your thoughts on variety?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "What are your thoughts on the design of Zepto and BlinkIt's websites or apps?",
+        "if user gives generic answer": "What specific design elements do you like or dislike?",
+        "probe if needed": "Have you noticed any differences in design between Zepto, BlinkIt, and other competitors?",
+        "probe if vague": "Can you provide more details about your thoughts on design?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "How important is serviceability to you when purchasing electronics?",
+        "if user gives generic answer": "What specific aspects of serviceability do you value?",
+        "probe if needed": "Have you ever experienced any issues with the serviceability of products from Zepto or BlinkIt?",
+        "probe if vague": "Can you provide more details about your thoughts on serviceability?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "What do you think about the idea of a friendly AI UX conversation agent that can assist with purchasing electronics?",
+        "if user gives generic answer": "What specific features or capabilities would you like to see in such an agent?",
+        "probe if needed": "Have you ever used a similar AI agent before?",
+        "probe if vague": "Can you provide more details about your thoughts on this idea?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      },
+      {
+        "main_question": "Do you have any concerns or reservations about using a friendly AI UX conversation agent for purchasing electronics?",
+        "if user gives generic answer": "What specific concerns do you have?",
+        "probe if needed": "Have you ever encountered any issues with AI technology in the past?",
+        "probe if vague": "Can you provide more details about your concerns?",
+        "probe gently if broad answer": "Can you elaborate on what you mean by that?"
+      }
+    ],
+    "agent_id": "agent_f8f2687c384ad85dcdf43d0fe4"
+  },
+  {
+    "id": "275198",
+    "title": "Flipkart",
+    "description": "I'm conducting a survey to understand buyer behaviour for electronics, specific to understanding recent competitors like Zepto and BlinkIt's \"10-minute delivery\" model. Core priorities are to understand the price parity, fulfilment speed, variety, design and serviceability.",
+    "creator": "raghav7533",
+    "created_at": "22 Sep 2024",
+    "status": "in_progress",
+    "problem_description": "I'm conducting a survey to understand buyer behaviour for electronics, specific to understanding recent competitors like Zepto and BlinkIt's \"10-minute delivery\" model. Core priorities are to understand the price parity, fulfilment speed, variety, design and serviceability.",
+    "questions": [
+      {
+        "main_question": "What are your thoughts on Zepto and BlinkIt's '10-minute delivery' model?",
+        "if user gives generic answer": "Can you elaborate on that?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you be more specific?"
+      },
+      {
+        "main_question": "How important is price parity when considering purchasing electronics?",
+        "if user gives generic answer": "What factors influence your decision?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you provide more specifics?"
+      },
+      {
+        "main_question": "How does fulfilment speed impact your decision to purchase electronics?",
+        "if user gives generic answer": "Can you explain why?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you be more specific?"
+      },
+      {
+        "main_question": "How important is variety of products when considering purchasing electronics?",
+        "if user gives generic answer": "What specific products are you looking for?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you provide more specifics?"
+      },
+      {
+        "main_question": "How does design play a role in your decision to purchase electronics?",
+        "if user gives generic answer": "Can you explain why?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you be more specific?"
+      },
+      {
+        "main_question": "How important is serviceability when considering purchasing electronics?",
+        "if user gives generic answer": "Can you elaborate on that?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you be more specific?"
+      },
+      {
+        "main_question": "Can you describe your recent experience with purchasing electronics?",
+        "if user gives generic answer": "Can you provide more details?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you be more specific?"
+      },
+      {
+        "main_question": "How do you typically research and compare electronics before making a purchase?",
+        "if user gives generic answer": "What sources do you use for research?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you elaborate on that?",
+        "probe gently if broad answer": "Can you provide more specifics?"
+      },
+      {
+        "main_question": "What features or factors are most important to you when purchasing electronics?",
+        "if user gives generic answer": "Can you explain why?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you be more specific?"
+      },
+      {
+        "main_question": "In your opinion, what makes for a positive purchasing experience for electronics?",
+        "if user gives generic answer": "Can you elaborate on that?",
+        "probe if needed": "Can you give an example?",
+        "probe if vague": "Can you provide more details?",
+        "probe gently if broad answer": "Can you be more specific?"
+      }
+    ],
+    "agent_id": "agent_41c7eae8c475758641eb330cd4",
+    "calls": []
   }
 ]

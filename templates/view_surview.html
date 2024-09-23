@@ -71,8 +71,6 @@
                                 <ul class="list-unstyled">
                                     <li><strong>If user gives generic answer:</strong> {{ question['if user gives generic answer'] }}</li>
                                     <li><strong>Probe if needed:</strong> {{ question['probe if needed'] }}</li>
-                                    <li><strong>Probe if vague:</strong> {{ question['probe if vague'] }}</li>
-                                    <li><strong>Probe gently if broad answer:</strong> {{ question['probe gently if broad answer'] }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -95,8 +93,8 @@
                 </a>
             </button>
             <button class="btn btn-secondary mb-3 mt-4">
-                <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}" class="text-white text-decoration-none">
-                    View Insights
+                <a href="https://calleragent.vercel.app/?id={{surview['agent_id']}}" target="_blank" class="text-white text-decoration-none">
+                    Preview call
                 </a>
             </button>
             <div class="calls-section mt-4">
